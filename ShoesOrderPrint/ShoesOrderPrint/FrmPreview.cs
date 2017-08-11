@@ -23,5 +23,11 @@ namespace ShoesOrderPrint
             //CommonBLL m_CommonBLL = new CommonBLL();
             //m_CommonBLL.InitialControl(this.Controls);
         }
+
+        private void txButton1_Click(object sender, EventArgs e)
+        {
+            CommonBLL m_CommonBLL = new CommonBLL();
+            m_CommonBLL.InitialControl(this.Controls);
+        }
     }
 }

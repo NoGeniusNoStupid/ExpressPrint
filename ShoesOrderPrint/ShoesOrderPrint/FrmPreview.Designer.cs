@@ -28,13 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.txButton1 = new TX.Framework.WindowUI.Controls.TXButton();
             this.SuspendLayout();
+            // 
+            // txButton1
+            // 
+            this.txButton1.AllowDrop = true;
+            this.txButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.txButton1.Image = null;
+            this.txButton1.Location = new System.Drawing.Point(302, 266);
+            this.txButton1.Name = "txButton1";
+            this.txButton1.Size = new System.Drawing.Size(100, 28);
+            this.txButton1.TabIndex = 0;
+            this.txButton1.Text = "保存";
+            this.txButton1.UseVisualStyleBackColor = true;
+            this.txButton1.Click += new System.EventHandler(this.txButton1_Click);
             // 
             // FrmPreview
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(405, 297);
+            this.Controls.Add(this.txButton1);
             this.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FrmPreview";
@@ -46,6 +61,8 @@
         }
 
         #endregion
+
+        private TX.Framework.WindowUI.Controls.TXButton txButton1;
 
 
     }

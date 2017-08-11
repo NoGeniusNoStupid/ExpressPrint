@@ -24,6 +24,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TX.Framework.WindowUI.Controls;
+using TX.Framework.WindowUI.Controls.HJTextBox;
 
 namespace ShoesOrderPrint
 {
@@ -45,7 +46,7 @@ namespace ShoesOrderPrint
         /// 表示打印主表
         /// </summary>
         PrintMainBLL m_PrintMainBLL = new PrintMainBLL();
-      
+       
         #endregion
 
         #region 公开方法
@@ -217,20 +218,25 @@ namespace ShoesOrderPrint
             try
             {
                 TXTextBox myTextBox = new TXTextBox();
-                myTextBox.Text = ItemConfig.ItemlCode;              
-                myTextBox.Multiline = true;
-                myTextBox.IsCanDrag = true;                
+                myTextBox.Name = ItemConfig.ItemlCode;
+                myTextBox.Text = ItemConfig.ItemlName;
+                myTextBox.IsCanDrag = true;
+                myTextBox.Multiline = true;                             
                 myTextBox.Size = new Size(ItemConfig.Wight, ItemConfig.Helght);
                 myTextBox.Location = new Point(ItemConfig.LeftAway, ItemConfig.TopAway);
                 myTextBox.Font = new Font(new FontFamily(ItemConfig.Font), Convert.ToInt32(ItemConfig.FontSize));
+                myTextBox.Tag = ItemConfig;
                 return myTextBox;
+
             }
             catch (Exception)
-            {          
+            {
                 return new TXTextBox();
             }
 
         }
+
+       
         /// <summary>
         /// 打印页面
         /// </summary>
@@ -256,34 +262,26 @@ namespace ShoesOrderPrint
         /// 选好遍历界面控件
         /// </summary>
         /// <param name="objControlCollection"></param>
-        public List<MExpressItemConfig> InitialControl(Control.ControlCollection objControlCollection, List<MExpressItemConfig> myItemConfigList)
+        public void InitialControl(Control.ControlCollection controlCollection)
         {
-             
-            foreach (Control objControl in objControlCollection)
+
+            foreach (Control objControl in controlCollection)
             {
-                if (objControl.HasChildren)
-                {
-                    InitialControl(objControl.Controls, myItemConfigList);
-                }
-                else
-                {
-                   
-                    TextBox myTextBox = objControl as TextBox;
+                       
+                    TXTextBox myTextBox = objControl as TXTextBox;
                     if (myTextBox == null)
                         continue;
-                    foreach (MExpressItemConfig myItemConfig in myItemConfigList)
-                    {
-                        if (myTextBox.Name == myItemConfig.ItemlCode && myItemConfig.Visable=="是")
-                        {
-                            myItemConfig.LeftAway = myTextBox.Location.X;
-                            myItemConfig.TopAway = myTextBox.Location.Y;
-                            m_ItemConfigBll.Update(myItemConfig);
-                        }
-                    }                 
-                }
+                    MExpressItemConfig myItemConfig = myTextBox.Tag as MExpressItemConfig;
+                    if (myItemConfig == null)
+                        continue;
+                    myItemConfig.LeftAway = myTextBox.Location.X;
+                    myItemConfig.TopAway = myTextBox.Location.Y;
+                    m_ItemConfigBll.Update(myItemConfig);
             }
-            return myItemConfigList;
+           
         }
         #endregion
+
+      
     }
 }
