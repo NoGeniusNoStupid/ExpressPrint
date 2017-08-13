@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -92,6 +93,12 @@ namespace ShoesOrderPrint
            set;
        }
        public byte[] GoodsPic
+       {
+           get;
+           set;
+       }
+       //大小40*40
+       public Image MyGoodsPic
        {
            get;
            set;

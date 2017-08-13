@@ -76,10 +76,10 @@ namespace ShoesOrderPrint
         /// <summary>
         /// 打印预览
         /// </summary>
-        public void PrintPreview(string templateName, List<MExpressItemConfig> myList)
+        public bool PrintPreview(string templateName, List<MExpressItemConfig> myList)
         {
             if (myList == null||string.IsNullOrEmpty(templateName))
-                return;
+                return false;
             string ImagePath = AppDomain.CurrentDomain.BaseDirectory + @"BackImage\{0}.jpg";
             ImagePath = string.Format(ImagePath, templateName);
             Image backImg = Image.FromFile(ImagePath);
@@ -97,7 +97,7 @@ namespace ShoesOrderPrint
                 }
             }
             mFrmPreview.ShowDialog();
-            
+            return mFrmPreview.m_IsUpdate;
         }
         /// <summary>
         /// 表示获取打印项配置
@@ -172,7 +172,6 @@ namespace ShoesOrderPrint
             mPrintDocument.DefaultPageSettings.Landscape = true;
             mPrintDocument.Print();
         }
-
         /// <summary>
         /// 表示获取打印主表数据
         /// </summary>

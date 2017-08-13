@@ -40,15 +40,16 @@ namespace ShoesOrderPrint
         {
             try
             {
-                t_dgv_PrintItemConfig.AutoGenerateColumns = false;//不添加额外列
-                t_dgv_PrintItemConfig.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;//列头居中
+                t_cmg_.AutoGenerateColumns = false;//不添加额外列
+                t_cmg_.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;//列头居中
                 //设置快递类型
                 List<MPrintMain> myList = m_CommonBLL.GetPrintMainSource();
                 foreach (MPrintMain item in myList)
                 {
                     txComboBox1.Items.Add(item.TemplateName);
                 }
-
+                t_cmg_Font.SelectedIndex = 0;
+                t_cmg_FontSize.SelectedIndex = 0;
                 txComboBox1_SelectedIndexChanged(null, null);
                              
             }
@@ -62,7 +63,7 @@ namespace ShoesOrderPrint
         {
             try
             {
-                 List<MExpressItemConfig> myList = t_dgv_PrintItemConfig.DataSource as List<MExpressItemConfig>;
+                 List<MExpressItemConfig> myList = t_cmg_.DataSource as List<MExpressItemConfig>;
                 
                  if (txComboBox1.SelectedIndex == -1)
                  {
@@ -70,7 +71,14 @@ namespace ShoesOrderPrint
                      return;
                  }
                  CommonBLL commonBLL = new CommonBLL();
-                 commonBLL.PrintPreview(txComboBox1.Text, myList);
+                 bool isUpdate= commonBLL.PrintPreview(txComboBox1.Text, myList);
+                 if (isUpdate)
+                 {
+                    //刷新
+                    txComboBox1_SelectedIndexChanged(null, null);
+                 }
+                
+                
             }
             catch (Exception ex)
             {
@@ -83,7 +91,7 @@ namespace ShoesOrderPrint
         {
               try
               {
-                  List<MExpressItemConfig> myList = t_dgv_PrintItemConfig.DataSource as List<MExpressItemConfig>;
+                  List<MExpressItemConfig> myList = t_cmg_.DataSource as List<MExpressItemConfig>;
                   if (myList == null)
                       return;
                   //更新
@@ -108,15 +116,22 @@ namespace ShoesOrderPrint
                       txComboBox1.SelectedIndex = 0;
                   }
                   //绑定数据
-                  t_dgv_PrintItemConfig.DataSource = m_CommonBLL.GetPrintItemConfig(txComboBox1.Text);  
+                List<MExpressItemConfig> myList= m_CommonBLL.GetPrintItemConfig(txComboBox1.Text);
+                t_cmg_.DataSource = myList;
+                if (myList != null && myList.Count > 0)
+                {
+                    t_cmg_Font.Text = myList[0].Font;
+                    t_cmg_FontSize.Text = myList[0].FontSize;
+                    t_txt_Color.Text = myList[0].PrintColor;
+                }
+
+
               }
             catch (Exception ex)
             {
                 this.Warning(ex.Message);
             }
         }
-        #endregion
-
         private void t_dgv_PrintItemConfig_DataError(object sender, DataGridViewDataErrorEventArgs e)
         {
             try
@@ -129,6 +144,59 @@ namespace ShoesOrderPrint
                 this.Warning(ex.Message);
             }
         }
+        //颜色选择器
+        private void t_btn_ColorSelect_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ColorDialog myColorDialog = new ColorDialog();
+                myColorDialog.AllowFullOpen = false;
+                myColorDialog.ShowDialog();
+                t_txt_Color.Text = myColorDialog.Color.Name;
+            }
+            catch (Exception ex)
+            {
+
+                this.Warning(ex.Message);
+            }
+        }
+        //保存模板配置
+        private void t_btn_TemplateSava_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                List<MExpressItemConfig> myList = t_cmg_.DataSource as List<MExpressItemConfig>;
+                if (myList == null)
+                    return;
+                string color = "black";
+                string font = "宋体";
+                string fontSize = "8";
+
+                font = t_cmg_Font.Text;
+                fontSize = t_cmg_FontSize.Text;
+                if (!string.IsNullOrEmpty(t_txt_Color.Text))
+                {
+                    color = t_txt_Color.Text;
+                }
+                //更新
+                foreach (MExpressItemConfig item in myList)
+                {
+                    item.PrintColor = color;
+                    item.Font = font;
+                    item.FontSize = fontSize;
+                    ItemConfig.Update(item);
+                }
+                this.Info("保存成功");
+                //刷新
+                txComboBox1_SelectedIndexChanged(null, null);
+            }
+            catch (Exception ex)
+            {
+
+                this.Warning(ex.Message);
+            }
+        }
+        #endregion
 
         #region 方法
        

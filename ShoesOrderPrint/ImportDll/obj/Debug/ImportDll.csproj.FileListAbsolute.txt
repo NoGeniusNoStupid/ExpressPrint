@@ -12,3 +12,7 @@ G:\ShoesOrderPrint\ImportDll\bin\Debug\ImportDll.pdb
 G:\ShoesOrderPrint\ImportDll\obj\Debug\ImportDll.dll
 G:\ShoesOrderPrint\ImportDll\obj\Debug\ImportDll.pdb
 D:\软件开发\ShoesOrderPrint\ShoesOrderPrint\ImportDll\obj\Debug\ImportDll.csprojResolveAssemblyReference.cache
+E:\ExpressPrint\ShoesOrderPrint\ImportDll\bin\Debug\ImportDll.dll
+E:\ExpressPrint\ShoesOrderPrint\ImportDll\bin\Debug\ImportDll.pdb
+E:\ExpressPrint\ShoesOrderPrint\ImportDll\obj\Debug\ImportDll.dll
+E:\ExpressPrint\ShoesOrderPrint\ImportDll\obj\Debug\ImportDll.pdb

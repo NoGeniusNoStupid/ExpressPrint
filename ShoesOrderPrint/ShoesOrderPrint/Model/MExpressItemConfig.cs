@@ -63,5 +63,9 @@ namespace ShoesOrderPrint.Model
         /// Visable
         /// </summary>
         public string Visable { get; set; }
+        /// <summary>
+        /// 打印颜色
+        /// </summary>
+        public string PrintColor { get; set; }
     }
 }

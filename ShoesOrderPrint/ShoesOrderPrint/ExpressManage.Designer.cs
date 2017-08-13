@@ -38,6 +38,7 @@
             this.t_txt_ExpressNo = new TX.Framework.WindowUI.Controls.TXTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txGroupBox1 = new TX.Framework.WindowUI.Controls.TXGroupBox();
+            this.txButton1 = new TX.Framework.WindowUI.Controls.TXButton();
             this.t_txt_Export = new TX.Framework.WindowUI.Controls.TXButton();
             this.t_txt_Search = new TX.Framework.WindowUI.Controls.TXButton();
             this.txRadioButton4 = new TX.Framework.WindowUI.Controls.TXRadioButton();
@@ -55,6 +56,7 @@
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column11 = new System.Windows.Forms.DataGridViewImageColumn();
             this.txMenuStrip1.SuspendLayout();
             this.txGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.t_dgv_Data)).BeginInit();
@@ -73,7 +75,7 @@
             this.打印ToolStripMenuItem});
             this.txMenuStrip1.Location = new System.Drawing.Point(3, 27);
             this.txMenuStrip1.Name = "txMenuStrip1";
-            this.txMenuStrip1.Size = new System.Drawing.Size(1120, 25);
+            this.txMenuStrip1.Size = new System.Drawing.Size(1231, 25);
             this.txMenuStrip1.TabIndex = 1;
             this.txMenuStrip1.Text = "txMenuStrip1";
             // 
@@ -145,6 +147,7 @@
             this.txGroupBox1.BorderStyle = TX.Framework.WindowUI.EnumBorderStyle.QQStyle;
             this.txGroupBox1.CaptionColor = System.Drawing.Color.Black;
             this.txGroupBox1.CaptionFont = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold);
+            this.txGroupBox1.Controls.Add(this.txButton1);
             this.txGroupBox1.Controls.Add(this.t_txt_Export);
             this.txGroupBox1.Controls.Add(this.t_txt_Search);
             this.txGroupBox1.Controls.Add(this.txRadioButton4);
@@ -153,18 +156,28 @@
             this.txGroupBox1.Controls.Add(this.txRadioButton1);
             this.txGroupBox1.Controls.Add(this.label1);
             this.txGroupBox1.Controls.Add(this.t_txt_ExpressNo);
-            this.txGroupBox1.Location = new System.Drawing.Point(3, 68);
+            this.txGroupBox1.Location = new System.Drawing.Point(3, 67);
             this.txGroupBox1.Name = "txGroupBox1";
-            this.txGroupBox1.Size = new System.Drawing.Size(1106, 51);
+            this.txGroupBox1.Size = new System.Drawing.Size(1228, 51);
             this.txGroupBox1.TabIndex = 4;
             this.txGroupBox1.TabStop = false;
             this.txGroupBox1.Text = "信息查询";
             this.txGroupBox1.TextMargin = 6;
             // 
+            // txButton1
+            // 
+            this.txButton1.Image = null;
+            this.txButton1.Location = new System.Drawing.Point(1023, 20);
+            this.txButton1.Name = "txButton1";
+            this.txButton1.Size = new System.Drawing.Size(100, 28);
+            this.txButton1.TabIndex = 10;
+            this.txButton1.Text = "显示列维护";
+            this.txButton1.UseVisualStyleBackColor = true;
+            // 
             // t_txt_Export
             // 
             this.t_txt_Export.Image = null;
-            this.t_txt_Export.Location = new System.Drawing.Point(1007, 17);
+            this.t_txt_Export.Location = new System.Drawing.Point(1129, 20);
             this.t_txt_Export.Name = "t_txt_Export";
             this.t_txt_Export.Size = new System.Drawing.Size(100, 28);
             this.t_txt_Export.TabIndex = 9;
@@ -174,7 +187,7 @@
             // t_txt_Search
             // 
             this.t_txt_Search.Image = null;
-            this.t_txt_Search.Location = new System.Drawing.Point(897, 17);
+            this.t_txt_Search.Location = new System.Drawing.Point(917, 20);
             this.t_txt_Search.Name = "t_txt_Search";
             this.t_txt_Search.Size = new System.Drawing.Size(100, 28);
             this.t_txt_Search.TabIndex = 8;
@@ -249,7 +262,7 @@
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.t_dgv_Data.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.t_dgv_Data.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.t_dgv_Data.ColumnHeadersHeight = 30;
             this.t_dgv_Data.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2,
@@ -260,13 +273,14 @@
             this.Column10,
             this.Column7,
             this.Column9,
-            this.Column8});
+            this.Column8,
+            this.Column11});
             this.t_dgv_Data.Location = new System.Drawing.Point(6, 125);
             this.t_dgv_Data.Name = "t_dgv_Data";
             this.t_dgv_Data.ReadOnly = true;
             this.t_dgv_Data.RowTemplate.Height = 23;
             this.t_dgv_Data.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.t_dgv_Data.Size = new System.Drawing.Size(1113, 597);
+            this.t_dgv_Data.Size = new System.Drawing.Size(1225, 597);
             this.t_dgv_Data.TabIndex = 5;
             this.t_dgv_Data.DoubleClick += new System.EventHandler(this.t_dgv_Data_DoubleClick);
             // 
@@ -299,7 +313,7 @@
             this.Column4.HeaderText = "尺寸";
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
-            this.Column4.Width = 70;
+            this.Column4.Width = 50;
             // 
             // Column5
             // 
@@ -307,7 +321,7 @@
             this.Column5.HeaderText = "数量";
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
-            this.Column5.Width = 70;
+            this.Column5.Width = 50;
             // 
             // Column6
             // 
@@ -315,6 +329,7 @@
             this.Column6.HeaderText = "收件人";
             this.Column6.Name = "Column6";
             this.Column6.ReadOnly = true;
+            this.Column6.Width = 80;
             // 
             // Column10
             // 
@@ -322,7 +337,7 @@
             this.Column10.HeaderText = "收件地址";
             this.Column10.Name = "Column10";
             this.Column10.ReadOnly = true;
-            this.Column10.Width = 200;
+            this.Column10.Width = 250;
             // 
             // Column7
             // 
@@ -345,11 +360,20 @@
             this.Column8.Name = "Column8";
             this.Column8.ReadOnly = true;
             // 
+            // Column11
+            // 
+            this.Column11.DataPropertyName = "MyGoodsPic";
+            this.Column11.HeaderText = "物品图片";
+            this.Column11.Name = "Column11";
+            this.Column11.ReadOnly = true;
+            this.Column11.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column11.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
             // ExpressManage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1126, 728);
+            this.ClientSize = new System.Drawing.Size(1237, 728);
             this.Controls.Add(this.t_dgv_Data);
             this.Controls.Add(this.txGroupBox1);
             this.Controls.Add(this.txMenuStrip1);
@@ -387,6 +411,7 @@
         private TX.Framework.WindowUI.Controls.TXButton t_txt_Search;
         private System.Windows.Forms.DataGridView t_dgv_Data;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private TX.Framework.WindowUI.Controls.TXButton txButton1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
@@ -397,6 +422,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
+        private System.Windows.Forms.DataGridViewImageColumn Column11;
 
     }
 }

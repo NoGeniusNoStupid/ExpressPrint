@@ -35,6 +35,9 @@ namespace ShoesOrderPrint
             {
                 t_dgv_Data.AutoGenerateColumns = false;//不添加额外列
                 t_dgv_Data.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;//列头居中
+                t_dgv_Data.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;  //自动调动datagridview的行高度
+                //t_dgv_Data.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;//自动调动datagrid死的宽度
+                //t_dgv_Data.Rows[0].Height = 50;
                 //获取数据源
                 t_txt_Search_Click(null, null);
 
@@ -82,9 +85,16 @@ namespace ShoesOrderPrint
                 IEnumerable<MExpress> myList = m_ExpressBLL.QueryList(sqlWhere);
 
                 List<MExpress> List = new List<MExpress>();
-                foreach (MExpress item in myList)
+                foreach (MExpress m_Express in myList)
                 {
-                    List.Add(item);
+                    if (m_Express.GoodsPic != null)
+                    {
+                        System.IO.MemoryStream ms = new System.IO.MemoryStream(m_Express.GoodsPic);
+                        System.Drawing.Image img = System.Drawing.Image.FromStream(ms);
+                        Bitmap bmp = new Bitmap(img, 80, 40);
+                        m_Express.MyGoodsPic = bmp;
+                    }
+                    List.Add(m_Express);
                 }
                 t_dgv_Data.DataSource = List;
             }

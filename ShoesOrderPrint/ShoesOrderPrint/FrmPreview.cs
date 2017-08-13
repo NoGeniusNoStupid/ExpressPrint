@@ -13,6 +13,11 @@ namespace ShoesOrderPrint
 {
     public partial class FrmPreview : Form
     {
+        /// <summary>
+        /// 是否更新
+        /// </summary>
+        public bool m_IsUpdate = false;
+
         public FrmPreview()
         {
             InitializeComponent();
@@ -26,8 +31,11 @@ namespace ShoesOrderPrint
 
         private void txButton1_Click(object sender, EventArgs e)
         {
+            m_IsUpdate = true;
             CommonBLL m_CommonBLL = new CommonBLL();
             m_CommonBLL.InitialControl(this.Controls);
+
+            MessageBox.Show("保存成功");
         }
     }
 }

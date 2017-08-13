@@ -103,7 +103,6 @@ E:\ExpressPrint\ShoesOrderPrint\ShoesOrderPrint\bin\Debug\ShoesOrderPrint.pdb
 E:\ExpressPrint\ShoesOrderPrint\ShoesOrderPrint\bin\Debug\System.Data.SQLite.dll
 E:\ExpressPrint\ShoesOrderPrint\ShoesOrderPrint\bin\Debug\TX.Framework.dll
 E:\ExpressPrint\ShoesOrderPrint\ShoesOrderPrint\bin\Debug\TX.Framework.WindowUI.dll
-E:\ExpressPrint\ShoesOrderPrint\ShoesOrderPrint\obj\Debug\ShoesOrderPrint.csprojResolveAssemblyReference.cache
 E:\ExpressPrint\ShoesOrderPrint\ShoesOrderPrint\obj\Debug\ShoesOrderPrint.ExpressMain.resources
 E:\ExpressPrint\ShoesOrderPrint\ShoesOrderPrint\obj\Debug\ShoesOrderPrint.ExpressManage.resources
 E:\ExpressPrint\ShoesOrderPrint\ShoesOrderPrint\obj\Debug\ShoesOrderPrint.ExpressOrder.resources
@@ -113,3 +112,4 @@ E:\ExpressPrint\ShoesOrderPrint\ShoesOrderPrint\obj\Debug\ShoesOrderPrint.FrmPri
 E:\ExpressPrint\ShoesOrderPrint\ShoesOrderPrint\obj\Debug\ShoesOrderPrint.FrmPrintItemConfig.resources
 E:\ExpressPrint\ShoesOrderPrint\ShoesOrderPrint\obj\Debug\ShoesOrderPrint.Properties.Resources.resources
 E:\ExpressPrint\ShoesOrderPrint\ShoesOrderPrint\obj\Debug\ShoesOrderPrint.csproj.GenerateResource.Cache
+E:\ExpressPrint\ShoesOrderPrint\ShoesOrderPrint\obj\Debug\ShoesOrderPrint.csprojResolveAssemblyReference.cache

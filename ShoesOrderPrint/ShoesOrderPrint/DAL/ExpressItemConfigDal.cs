@@ -39,6 +39,7 @@ INSERT INTO [T_PrintItem] (
 	,[Helght]
 	,[LeftAway]
 	,[TopAway]
+    ,[PrintColor]
 )
 VALUES (
 	@ItemID
@@ -54,6 +55,7 @@ VALUES (
 	,@Helght
 	,@LeftAway
 	,@TopAway
+    ,@PrintColor
 );";
                 #endregion
                 var res = SqlHelper.ExecuteScalar(CommandType.Text, sql,
@@ -69,7 +71,8 @@ VALUES (
                         new SQLiteParameter("@Wight", SqlHelper.ToNullDBValue(model.Wight)),
                         new SQLiteParameter("@Helght", SqlHelper.ToNullDBValue(model.Helght)),
                         new SQLiteParameter("@LeftAway", SqlHelper.ToNullDBValue(model.LeftAway)),
-                        new SQLiteParameter("@TopAway", SqlHelper.ToNullDBValue(model.TopAway))
+                        new SQLiteParameter("@TopAway", SqlHelper.ToNullDBValue(model.TopAway)),
+                        new SQLiteParameter("@PrintColor", SqlHelper.ToNullDBValue(model.PrintColor))
                     );
                 return res == null ? 0 : Convert.ToInt32(res);
             }
@@ -108,6 +111,7 @@ SET
 	,[Helght] = @Helght
 	,[LeftAway] = @LeftAway
 	,[TopAway] = @TopAway
+    ,[PrintColor] = @PrintColor
 WHERE [ItemID] = @ItemID";
                 #endregion
                 return SqlHelper.ExecuteNonQuery(CommandType.Text, sql,
@@ -123,7 +127,8 @@ WHERE [ItemID] = @ItemID";
                         new SQLiteParameter("@Wight", SqlHelper.ToNullDBValue(model.Wight)),
                         new SQLiteParameter("@Helght", SqlHelper.ToNullDBValue(model.Helght)),
                         new SQLiteParameter("@LeftAway", SqlHelper.ToNullDBValue(model.LeftAway)),
-                        new SQLiteParameter("@TopAway", SqlHelper.ToNullDBValue(model.TopAway))
+                        new SQLiteParameter("@TopAway", SqlHelper.ToNullDBValue(model.TopAway)),
+                        new SQLiteParameter("@PrintColor", SqlHelper.ToNullDBValue(model.PrintColor))
                     );
             }
             #endregion
