@@ -265,8 +265,7 @@ namespace ShoesOrderPrint
         {
 
             foreach (Control objControl in controlCollection)
-            {
-                       
+            {                     
                     TXTextBox myTextBox = objControl as TXTextBox;
                     if (myTextBox == null)
                         continue;
@@ -276,8 +275,7 @@ namespace ShoesOrderPrint
                     myItemConfig.LeftAway = myTextBox.Location.X;
                     myItemConfig.TopAway = myTextBox.Location.Y;
                     m_ItemConfigBll.Update(myItemConfig);
-            }
-           
+            }           
         }
         #endregion
 

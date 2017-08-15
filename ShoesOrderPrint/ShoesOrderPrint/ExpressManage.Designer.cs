@@ -38,7 +38,7 @@
             this.t_txt_ExpressNo = new TX.Framework.WindowUI.Controls.TXTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txGroupBox1 = new TX.Framework.WindowUI.Controls.TXGroupBox();
-            this.txButton1 = new TX.Framework.WindowUI.Controls.TXButton();
+            this.t_btn_columns = new TX.Framework.WindowUI.Controls.TXButton();
             this.t_txt_Export = new TX.Framework.WindowUI.Controls.TXButton();
             this.t_txt_Search = new TX.Framework.WindowUI.Controls.TXButton();
             this.txRadioButton4 = new TX.Framework.WindowUI.Controls.TXRadioButton();
@@ -150,7 +150,7 @@
             this.txGroupBox1.BorderStyle = TX.Framework.WindowUI.EnumBorderStyle.QQStyle;
             this.txGroupBox1.CaptionColor = System.Drawing.Color.Black;
             this.txGroupBox1.CaptionFont = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold);
-            this.txGroupBox1.Controls.Add(this.txButton1);
+            this.txGroupBox1.Controls.Add(this.t_btn_columns);
             this.txGroupBox1.Controls.Add(this.t_txt_Export);
             this.txGroupBox1.Controls.Add(this.t_txt_Search);
             this.txGroupBox1.Controls.Add(this.txRadioButton4);
@@ -167,15 +167,16 @@
             this.txGroupBox1.Text = "信息查询";
             this.txGroupBox1.TextMargin = 6;
             // 
-            // txButton1
+            // t_btn_columns
             // 
-            this.txButton1.Image = null;
-            this.txButton1.Location = new System.Drawing.Point(1023, 20);
-            this.txButton1.Name = "txButton1";
-            this.txButton1.Size = new System.Drawing.Size(100, 28);
-            this.txButton1.TabIndex = 10;
-            this.txButton1.Text = "显示列维护";
-            this.txButton1.UseVisualStyleBackColor = true;
+            this.t_btn_columns.Image = null;
+            this.t_btn_columns.Location = new System.Drawing.Point(1023, 20);
+            this.t_btn_columns.Name = "t_btn_columns";
+            this.t_btn_columns.Size = new System.Drawing.Size(100, 28);
+            this.t_btn_columns.TabIndex = 10;
+            this.t_btn_columns.Text = "显示列维护";
+            this.t_btn_columns.UseVisualStyleBackColor = true;
+            this.t_btn_columns.Click += new System.EventHandler(this.t_btn_columns_Click);
             // 
             // t_txt_Export
             // 
@@ -418,7 +419,7 @@
         private TX.Framework.WindowUI.Controls.TXButton t_txt_Search;
         private System.Windows.Forms.DataGridView t_dgv_Data;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
-        private TX.Framework.WindowUI.Controls.TXButton txButton1;
+        private TX.Framework.WindowUI.Controls.TXButton t_btn_columns;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;

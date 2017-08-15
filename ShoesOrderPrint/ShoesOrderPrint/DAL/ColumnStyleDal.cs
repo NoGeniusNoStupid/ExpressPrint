@@ -101,7 +101,7 @@ SET
 	,[Column_Width] = @ColumnWidth
 	,[Column_Visible] = @ColumnVisible
 	,[Update_Sign] = @UpdateSign
-WHERE [ColumnId] = @ColumnId";
+WHERE [Column_Id] = @ColumnId";
             #endregion
             return SqlHelper.ExecuteNonQuery(CommandType.Text, sql,
 					new SQLiteParameter("@ColumnId", SqlHelper.ToNullDBValue(model.ColumnId)),					

@@ -52,20 +52,8 @@ namespace ShoesOrderPrint
                 List<MColumnStyle> list = m_ColumnStyleBLL.QueryList("where Style_Name='Manage0101' order by Column_Index");
                 if (list == null)
                     return;
-                foreach (DataGridViewColumn column in t_dgv_Data.Columns)
-                {
-                    foreach (MColumnStyle mColumnStyle in list)
-                    {
-                        if (column.HeaderText == mColumnStyle.ColumnCaption)
-                        {
-                            column.Width = mColumnStyle.ColumnWidth;
-                            if (mColumnStyle.ColumnVisible == 0)
-                                column.Visible = false;
-                            break;
-                        }
-                    }
-                }
-                isPageLoad = false;
+                SetShowColumns(list);
+               
             }
             catch (Exception ex)
             {
@@ -73,6 +61,7 @@ namespace ShoesOrderPrint
                 this.Warning(ex.Message);
             }
         }
+       
         /// <summary>
         /// 查询
         /// </summary>
@@ -269,6 +258,58 @@ namespace ShoesOrderPrint
         }
 
         #endregion
+
+        /// <summary>
+        /// 维护列点击
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void t_btn_columns_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                List<MColumnStyle> list = m_ColumnStyleBLL.QueryList("where Style_Name='Manage0101' order by Column_Index");
+                if (list == null)
+                    return;
+                FrmColumns myFrmColumns = new FrmColumns(list);
+                myFrmColumns.ShowDialog();
+                SetShowColumns(list);
+            }
+            catch (Exception ex)
+            {
+
+                this.Warning(ex.Message);
+            }
+        }
+
+
+        /// <summary>
+        /// 设置显示列
+        /// </summary>
+        /// <param name="list"></param>
+        private void SetShowColumns(List<MColumnStyle> list)
+        {
+            isPageLoad = true;
+
+            foreach (DataGridViewColumn column in t_dgv_Data.Columns)
+            {
+                foreach (MColumnStyle mColumnStyle in list)
+                {
+                    if (column.HeaderText == mColumnStyle.ColumnCaption)
+                    {
+                        if (column.Width != mColumnStyle.ColumnWidth)
+                            column.Width = mColumnStyle.ColumnWidth;
+                        if (mColumnStyle.ColumnVisible == 0)
+                            column.Visible = false;
+                        else if (mColumnStyle.ColumnVisible == 1)
+                            column.Visible = true;
+                        break;
+                    }
+                }
+            }
+
+            isPageLoad = false;
+        }
 
     }
 }
