@@ -54,11 +54,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\ColumnStyleBLL.cs" />
     <Compile Include="BLL\CommonBLL.cs" />
     <Compile Include="BLL\ExpressBLL.cs" />
     <Compile Include="BLL\ExpressItemConfigBLL.cs" />
     <Compile Include="BLL\SoftReg.cs" />
     <Compile Include="BLL\PrintMainBLL.cs" />
+    <Compile Include="DAL\ColumnStyleDal.cs" />
     <Compile Include="DAL\ExpressDal.cs" />
     <Compile Include="DAL\ExpressItemConfigDal.cs" />
     <Compile Include="DAL\PrintMainDal.cs" />
@@ -104,6 +106,7 @@
     <Compile Include="FrmPrintItemConfig.Designer.cs">
       <DependentUpon>FrmPrintItemConfig.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\MColumnStyle.cs" />
     <Compile Include="Model\MPrintMain.cs" />
     <Compile Include="Model\MExpress.cs" />
     <Compile Include="Model\MExpressConfig.cs" />

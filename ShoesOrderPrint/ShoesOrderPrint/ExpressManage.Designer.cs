@@ -142,6 +142,9 @@
             // 
             // txGroupBox1
             // 
+            this.txGroupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txGroupBox1.BackColor = System.Drawing.Color.Transparent;
             this.txGroupBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(168)))), ((int)(((byte)(192)))));
             this.txGroupBox1.BorderStyle = TX.Framework.WindowUI.EnumBorderStyle.QQStyle;
@@ -254,6 +257,9 @@
             // 
             // t_dgv_Data
             // 
+            this.t_dgv_Data.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -282,6 +288,7 @@
             this.t_dgv_Data.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.t_dgv_Data.Size = new System.Drawing.Size(1225, 597);
             this.t_dgv_Data.TabIndex = 5;
+            this.t_dgv_Data.ColumnWidthChanged += new System.Windows.Forms.DataGridViewColumnEventHandler(this.t_dgv_Data_ColumnWidthChanged);
             this.t_dgv_Data.DoubleClick += new System.EventHandler(this.t_dgv_Data_DoubleClick);
             // 
             // Column1

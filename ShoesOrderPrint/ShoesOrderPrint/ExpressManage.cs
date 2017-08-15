@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ShoesOrderPrint.BLL;
+using ShoesOrderPrint.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,11 +19,18 @@ namespace ShoesOrderPrint
         /// 表示快递业务逻辑层
         /// </summary>
         private ExpressBLL m_ExpressBLL = new ExpressBLL();
-
+        /// <summary>
+        /// 显示列业务逻辑层
+        /// </summary>
+        private ColumnStyleBLL m_ColumnStyleBLL = new ColumnStyleBLL();
         public ExpressManage()
         {
             InitializeComponent();
         }
+        /// <summary>
+        /// 是否界面加载
+        /// </summary>
+        bool isPageLoad = true;
 
         #region 事件
         /// <summary>
@@ -36,11 +45,27 @@ namespace ShoesOrderPrint
                 t_dgv_Data.AutoGenerateColumns = false;//不添加额外列
                 t_dgv_Data.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;//列头居中
                 t_dgv_Data.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;  //自动调动datagridview的行高度
-                //t_dgv_Data.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;//自动调动datagrid死的宽度
-                //t_dgv_Data.Rows[0].Height = 50;
-                //获取数据源
+               
                 t_txt_Search_Click(null, null);
 
+                //设置显示列
+                List<MColumnStyle> list = m_ColumnStyleBLL.QueryList("where Style_Name='Manage0101' order by Column_Index");
+                if (list == null)
+                    return;
+                foreach (DataGridViewColumn column in t_dgv_Data.Columns)
+                {
+                    foreach (MColumnStyle mColumnStyle in list)
+                    {
+                        if (column.HeaderText == mColumnStyle.ColumnCaption)
+                        {
+                            column.Width = mColumnStyle.ColumnWidth;
+                            if (mColumnStyle.ColumnVisible == 0)
+                                column.Visible = false;
+                            break;
+                        }
+                    }
+                }
+                isPageLoad = false;
             }
             catch (Exception ex)
             {
@@ -104,8 +129,7 @@ namespace ShoesOrderPrint
                 this.Warning(ex.Message);
             }
         }
-        #endregion
-
+       
         private void 新建ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
@@ -206,8 +230,45 @@ namespace ShoesOrderPrint
                 this.Warning(ex.Message);
             }
         }
-        
+        /// <summary>
+        /// 表示列宽发生改变事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void t_dgv_Data_ColumnWidthChanged(object sender, DataGridViewColumnEventArgs e)
+        {
+            try
+            {
+                if (isPageLoad)
+                    return;
+                //设置显示列
+                List<MColumnStyle> list = m_ColumnStyleBLL.QueryList("where Style_Name='Manage0101' order by Column_Index");
+                if (list == null)
+                    return;
+                //保存列宽
+                foreach (DataGridViewColumn column in t_dgv_Data.Columns)
+                {
+                    if (!column.Visible)
+                        continue;
+                    foreach (MColumnStyle mColumnStyle in list)
+                    {                   
+                        if (column.HeaderText != mColumnStyle.ColumnCaption)
+                            continue;
+                        if (column.Width != mColumnStyle.ColumnWidth)
+                        {
+                            m_ColumnStyleBLL.Update(column.Width, column.HeaderText, "Manage0101");
+                            return;
+                        }                         
+                    }  
+                }
+            }
+            catch (Exception ex)
+            {
+                this.Warning(ex.Message);
+            }
+        }
 
-       
+        #endregion
+
     }
 }
