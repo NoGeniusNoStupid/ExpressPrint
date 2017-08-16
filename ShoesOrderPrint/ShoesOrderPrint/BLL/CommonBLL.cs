@@ -131,15 +131,7 @@ namespace ShoesOrderPrint
                 //获取名称
                 string name = ItemConfigModel.ItemlCode;
                 if (!string.IsNullOrEmpty(ItemConfigModel.TemplateName))
-                    name = name.Replace("_","");
-                //for (int i = 0; i < props.Length; i++)
-                //{
-                //    if (name == props[i].Name)
-                //    {
-                //        ItemConfigModel.ItemlName = props[i].GetValue(mExpress).ToString();
-                //        break;
-                //    }
-                //}
+                    name = name.Replace("_","");              
                 foreach (var prop in props)
                 {
                     if (name == prop.Name)

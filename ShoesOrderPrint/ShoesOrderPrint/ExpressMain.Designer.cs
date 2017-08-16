@@ -31,6 +31,8 @@
             this.txButton4 = new TX.Framework.WindowUI.Controls.TXButton();
             this.txButton2 = new TX.Framework.WindowUI.Controls.TXButton();
             this.txButton1 = new TX.Framework.WindowUI.Controls.TXButton();
+            this.t_btn_DataBackup = new TX.Framework.WindowUI.Controls.TXButton();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txButton4
@@ -66,11 +68,34 @@
             this.txButton1.UseVisualStyleBackColor = true;
             this.txButton1.Click += new System.EventHandler(this.txButton1_Click);
             // 
+            // t_btn_DataBackup
+            // 
+            this.t_btn_DataBackup.Image = null;
+            this.t_btn_DataBackup.Location = new System.Drawing.Point(200, 229);
+            this.t_btn_DataBackup.Name = "t_btn_DataBackup";
+            this.t_btn_DataBackup.Size = new System.Drawing.Size(100, 28);
+            this.t_btn_DataBackup.TabIndex = 8;
+            this.t_btn_DataBackup.Text = "数据备份";
+            this.t_btn_DataBackup.UseVisualStyleBackColor = true;
+            this.t_btn_DataBackup.Click += new System.EventHandler(this.t_btn_DataBackup_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.Red;
+            this.label1.Location = new System.Drawing.Point(329, 296);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(131, 12);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "*若数据重要请定期备份";
+            // 
             // ExpressMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(500, 350);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.t_btn_DataBackup);
             this.Controls.Add(this.txButton4);
             this.Controls.Add(this.txButton2);
             this.Controls.Add(this.txButton1);
@@ -80,9 +105,10 @@
             this.MinimizeBox = false;
             this.Name = "ExpressMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "快递工具";
+            this.Text = "智能打印";
             this.Load += new System.EventHandler(this.ExpressMain_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -91,5 +117,7 @@
         private TX.Framework.WindowUI.Controls.TXButton txButton4;
         private TX.Framework.WindowUI.Controls.TXButton txButton2;
         private TX.Framework.WindowUI.Controls.TXButton txButton1;
+        private TX.Framework.WindowUI.Controls.TXButton t_btn_DataBackup;
+        private System.Windows.Forms.Label label1;
     }
 }

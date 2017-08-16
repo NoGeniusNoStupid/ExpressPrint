@@ -20,8 +20,9 @@ namespace ShoesOrderPrint
             myFrom.ShowDialog();
             if (myFrom.myDialogResult == DialogResult.OK)
             {
-                Application.Run(new ExpressMain()); 
+                Application.Run(new ExpressMain());
             }
+            //Application.Run(new ExpressMain()); 
         }
     }
 }

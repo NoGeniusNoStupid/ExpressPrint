@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txMenuStrip1 = new TX.Framework.WindowUI.Controls.TXMenuStrip();
             this.新建ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.复制ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -39,7 +39,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txGroupBox1 = new TX.Framework.WindowUI.Controls.TXGroupBox();
             this.t_btn_columns = new TX.Framework.WindowUI.Controls.TXButton();
-            this.t_txt_Export = new TX.Framework.WindowUI.Controls.TXButton();
+            this.t_btn_Export = new TX.Framework.WindowUI.Controls.TXButton();
             this.t_txt_Search = new TX.Framework.WindowUI.Controls.TXButton();
             this.txRadioButton4 = new TX.Framework.WindowUI.Controls.TXRadioButton();
             this.txRadioButton3 = new TX.Framework.WindowUI.Controls.TXRadioButton();
@@ -57,6 +57,7 @@
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column11 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.t_btn_Import = new TX.Framework.WindowUI.Controls.TXButton();
             this.txMenuStrip1.SuspendLayout();
             this.txGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.t_dgv_Data)).BeginInit();
@@ -150,8 +151,9 @@
             this.txGroupBox1.BorderStyle = TX.Framework.WindowUI.EnumBorderStyle.QQStyle;
             this.txGroupBox1.CaptionColor = System.Drawing.Color.Black;
             this.txGroupBox1.CaptionFont = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold);
+            this.txGroupBox1.Controls.Add(this.t_btn_Import);
             this.txGroupBox1.Controls.Add(this.t_btn_columns);
-            this.txGroupBox1.Controls.Add(this.t_txt_Export);
+            this.txGroupBox1.Controls.Add(this.t_btn_Export);
             this.txGroupBox1.Controls.Add(this.t_txt_Search);
             this.txGroupBox1.Controls.Add(this.txRadioButton4);
             this.txGroupBox1.Controls.Add(this.txRadioButton3);
@@ -170,7 +172,7 @@
             // t_btn_columns
             // 
             this.t_btn_columns.Image = null;
-            this.t_btn_columns.Location = new System.Drawing.Point(1023, 20);
+            this.t_btn_columns.Location = new System.Drawing.Point(918, 18);
             this.t_btn_columns.Name = "t_btn_columns";
             this.t_btn_columns.Size = new System.Drawing.Size(100, 28);
             this.t_btn_columns.TabIndex = 10;
@@ -178,20 +180,21 @@
             this.t_btn_columns.UseVisualStyleBackColor = true;
             this.t_btn_columns.Click += new System.EventHandler(this.t_btn_columns_Click);
             // 
-            // t_txt_Export
+            // t_btn_Export
             // 
-            this.t_txt_Export.Image = null;
-            this.t_txt_Export.Location = new System.Drawing.Point(1129, 20);
-            this.t_txt_Export.Name = "t_txt_Export";
-            this.t_txt_Export.Size = new System.Drawing.Size(100, 28);
-            this.t_txt_Export.TabIndex = 9;
-            this.t_txt_Export.Text = "导出Excel";
-            this.t_txt_Export.UseVisualStyleBackColor = true;
+            this.t_btn_Export.Image = null;
+            this.t_btn_Export.Location = new System.Drawing.Point(1128, 18);
+            this.t_btn_Export.Name = "t_btn_Export";
+            this.t_btn_Export.Size = new System.Drawing.Size(100, 28);
+            this.t_btn_Export.TabIndex = 9;
+            this.t_btn_Export.Text = "导出Excel";
+            this.t_btn_Export.UseVisualStyleBackColor = true;
+            this.t_btn_Export.Click += new System.EventHandler(this.t_btn_Export_Click);
             // 
             // t_txt_Search
             // 
             this.t_txt_Search.Image = null;
-            this.t_txt_Search.Location = new System.Drawing.Point(917, 20);
+            this.t_txt_Search.Location = new System.Drawing.Point(812, 18);
             this.t_txt_Search.Name = "t_txt_Search";
             this.t_txt_Search.Size = new System.Drawing.Size(100, 28);
             this.t_txt_Search.TabIndex = 8;
@@ -261,14 +264,14 @@
             this.t_dgv_Data.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.t_dgv_Data.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.t_dgv_Data.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.t_dgv_Data.ColumnHeadersHeight = 30;
             this.t_dgv_Data.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -377,6 +380,17 @@
             this.Column11.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Column11.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
+            // t_btn_Import
+            // 
+            this.t_btn_Import.Image = null;
+            this.t_btn_Import.Location = new System.Drawing.Point(1024, 18);
+            this.t_btn_Import.Name = "t_btn_Import";
+            this.t_btn_Import.Size = new System.Drawing.Size(100, 28);
+            this.t_btn_Import.TabIndex = 10;
+            this.t_btn_Import.Text = "导出Excel";
+            this.t_btn_Import.UseVisualStyleBackColor = true;
+            this.t_btn_Import.Click += new System.EventHandler(this.t_btn_Import_Click);
+            // 
             // ExpressManage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -415,7 +429,7 @@
         private TX.Framework.WindowUI.Controls.TXRadioButton txRadioButton3;
         private TX.Framework.WindowUI.Controls.TXRadioButton txRadioButton2;
         private TX.Framework.WindowUI.Controls.TXRadioButton txRadioButton1;
-        private TX.Framework.WindowUI.Controls.TXButton t_txt_Export;
+        private TX.Framework.WindowUI.Controls.TXButton t_btn_Export;
         private TX.Framework.WindowUI.Controls.TXButton t_txt_Search;
         private System.Windows.Forms.DataGridView t_dgv_Data;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
@@ -431,6 +445,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewImageColumn Column11;
+        private TX.Framework.WindowUI.Controls.TXButton t_btn_Import;
 
     }
 }

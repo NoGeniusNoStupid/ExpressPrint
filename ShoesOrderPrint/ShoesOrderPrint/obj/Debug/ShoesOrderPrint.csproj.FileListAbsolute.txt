@@ -112,5 +112,10 @@ E:\ExpressPrint\ShoesOrderPrint\ShoesOrderPrint\obj\Debug\ShoesOrderPrint.FrmPri
 E:\ExpressPrint\ShoesOrderPrint\ShoesOrderPrint\obj\Debug\ShoesOrderPrint.FrmPrintItemConfig.resources
 E:\ExpressPrint\ShoesOrderPrint\ShoesOrderPrint\obj\Debug\ShoesOrderPrint.Properties.Resources.resources
 E:\ExpressPrint\ShoesOrderPrint\ShoesOrderPrint\obj\Debug\ShoesOrderPrint.csproj.GenerateResource.Cache
-E:\ExpressPrint\ShoesOrderPrint\ShoesOrderPrint\obj\Debug\ShoesOrderPrint.csprojResolveAssemblyReference.cache
 E:\ExpressPrint\ShoesOrderPrint\ShoesOrderPrint\obj\Debug\ShoesOrderPrint.FrmColumns.resources
+E:\ExpressPrint\ShoesOrderPrint\ShoesOrderPrint\bin\Debug\Microsoft.Office.Interop.Excel.dll
+E:\ExpressPrint\ShoesOrderPrint\ShoesOrderPrint\bin\Debug\office.dll
+E:\ExpressPrint\ShoesOrderPrint\ShoesOrderPrint\bin\Debug\Microsoft.Vbe.Interop.dll
+E:\ExpressPrint\ShoesOrderPrint\ShoesOrderPrint\bin\Debug\Microsoft.Office.Interop.Excel.xml
+E:\ExpressPrint\ShoesOrderPrint\ShoesOrderPrint\bin\Debug\office.xml
+E:\ExpressPrint\ShoesOrderPrint\ShoesOrderPrint\obj\Debug\ShoesOrderPrint.csprojResolveAssemblyReference.cache

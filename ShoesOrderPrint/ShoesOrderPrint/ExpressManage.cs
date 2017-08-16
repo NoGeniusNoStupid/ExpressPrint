@@ -23,6 +23,11 @@ namespace ShoesOrderPrint
         /// 显示列业务逻辑层
         /// </summary>
         private ColumnStyleBLL m_ColumnStyleBLL = new ColumnStyleBLL();
+
+        /// <summary>
+        /// 表示通用的业务逻辑类
+        /// </summary>
+        CommonBLL m_CommonBLL = new CommonBLL();
         public ExpressManage()
         {
             InitializeComponent();
@@ -174,7 +179,18 @@ namespace ShoesOrderPrint
         {
             try
             {
-
+                if (t_dgv_Data.CurrentRow == null)
+                {
+                    this.Warning("请先选择要打印的快递单！");
+                    return;
+                }
+                MExpress mExpress = this.t_dgv_Data.CurrentRow.DataBoundItem as MExpress;
+                if (string.IsNullOrEmpty(mExpress.ExpreeType))
+                 {
+                     this.Info("此份快递单还为选择快递类型！");
+                     return;
+                 }
+                m_CommonBLL.Print(mExpress.ExpreeType, mExpress);
             }
             catch (Exception ex)
             {
@@ -309,6 +325,16 @@ namespace ShoesOrderPrint
             }
 
             isPageLoad = false;
+        }
+
+        private void t_btn_Import_Click(object sender, EventArgs e)
+        {
+            this.Info("暂未开放！稍后实现");
+        }
+
+        private void t_btn_Export_Click(object sender, EventArgs e)
+        {
+            this.Info("暂未开放！稍后实现");
         }
 
     }

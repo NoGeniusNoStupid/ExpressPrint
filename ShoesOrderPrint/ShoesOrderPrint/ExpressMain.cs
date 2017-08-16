@@ -66,5 +66,10 @@ namespace ShoesOrderPrint
             CommonBLL myCommonBLL = new CommonBLL();
             myCommonBLL.SetCenterScreen(this);
         }
+        //数据备份
+        private void t_btn_DataBackup_Click(object sender, EventArgs e)
+        {
+            this.Info("暂未开放！后期实现");
+        }
     }
 }
