@@ -76,6 +76,7 @@
     <Compile Include="BLL\CommonBLL.cs" />
     <Compile Include="BLL\ExpressBLL.cs" />
     <Compile Include="BLL\ExpressItemConfigBLL.cs" />
+    <Compile Include="BLL\GetPrinter.cs" />
     <Compile Include="BLL\SoftReg.cs" />
     <Compile Include="BLL\PrintMainBLL.cs" />
     <Compile Include="DAL\ColumnStyleDal.cs" />

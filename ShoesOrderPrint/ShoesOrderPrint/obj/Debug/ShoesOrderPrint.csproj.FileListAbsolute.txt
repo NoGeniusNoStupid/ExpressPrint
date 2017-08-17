@@ -119,3 +119,4 @@ E:\ExpressPrint\ShoesOrderPrint\ShoesOrderPrint\bin\Debug\office.dll
 E:\ExpressPrint\ShoesOrderPrint\ShoesOrderPrint\bin\Debug\Microsoft.Vbe.Interop.dll
 E:\ExpressPrint\ShoesOrderPrint\ShoesOrderPrint\bin\Debug\Microsoft.Office.Interop.Excel.xml
 E:\ExpressPrint\ShoesOrderPrint\ShoesOrderPrint\bin\Debug\office.xml
+E:\ExpressPrint\ShoesOrderPrint\ShoesOrderPrint\obj\Debug\ShoesOrderPrint.csprojResolveAssemblyReference.cache
