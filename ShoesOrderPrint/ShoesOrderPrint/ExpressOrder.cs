@@ -522,11 +522,5 @@ namespace ShoesOrderPrint
 
         }
         #endregion
-       
-       
-
-        
-      
-
     }
 }

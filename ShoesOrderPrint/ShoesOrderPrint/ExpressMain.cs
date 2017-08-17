@@ -71,5 +71,11 @@ namespace ShoesOrderPrint
         {
             this.Info("暂未开放！后期实现");
         }
+        //打印机配置
+        private void t_btn_Printer_Click(object sender, EventArgs e)
+        {
+            FrmPrinterSetting myForm = new FrmPrinterSetting();
+            myForm.ShowDialog();
+        }
     }
 }

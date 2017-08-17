@@ -124,6 +124,12 @@
     <Compile Include="FrmPrintConfig.Designer.cs">
       <DependentUpon>FrmPrintConfig.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmPrinterSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPrinterSetting.Designer.cs">
+      <DependentUpon>FrmPrinterSetting.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmPrintItemConfig.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -158,6 +164,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPrintConfig.resx">
       <DependentUpon>FrmPrintConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPrinterSetting.resx">
+      <DependentUpon>FrmPrinterSetting.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPrintItemConfig.resx">
       <DependentUpon>FrmPrintItemConfig.cs</DependentUpon>

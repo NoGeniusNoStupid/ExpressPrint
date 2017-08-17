@@ -16,13 +16,13 @@ namespace ShoesOrderPrint
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Form1 myFrom = new Form1();
-            myFrom.ShowDialog();
-            if (myFrom.myDialogResult == DialogResult.OK)
-            {
-                Application.Run(new ExpressMain());
-            }
-            //Application.Run(new ExpressMain()); 
+            //Form1 myFrom = new Form1();
+            //myFrom.ShowDialog();
+            //if (myFrom.myDialogResult == DialogResult.OK)
+            //{
+            //    Application.Run(new ExpressMain());
+            //}
+            Application.Run(new ExpressMain()); 
         }
     }
 }

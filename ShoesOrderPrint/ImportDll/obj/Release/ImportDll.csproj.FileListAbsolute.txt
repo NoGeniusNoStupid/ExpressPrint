@@ -2,3 +2,7 @@ G:\ShoesOrderPrint\ImportDll\bin\Release\ImportDll.dll
 G:\ShoesOrderPrint\ImportDll\bin\Release\ImportDll.pdb
 G:\ShoesOrderPrint\ImportDll\obj\Release\ImportDll.dll
 G:\ShoesOrderPrint\ImportDll\obj\Release\ImportDll.pdb
+E:\ExpressPrint\ShoesOrderPrint\ImportDll\bin\Release\ImportDll.dll
+E:\ExpressPrint\ShoesOrderPrint\ImportDll\bin\Release\ImportDll.pdb
+E:\ExpressPrint\ShoesOrderPrint\ImportDll\obj\Release\ImportDll.dll
+E:\ExpressPrint\ShoesOrderPrint\ImportDll\obj\Release\ImportDll.pdb

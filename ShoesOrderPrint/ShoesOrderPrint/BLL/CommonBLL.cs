@@ -46,7 +46,10 @@ namespace ShoesOrderPrint
         /// 表示打印主表
         /// </summary>
         PrintMainBLL m_PrintMainBLL = new PrintMainBLL();
-       
+        /// <summary>
+        /// 快递单业务逻辑类
+        /// </summary>
+        ExpressBLL m_ExpressBLL = new ExpressBLL();
         #endregion
 
         #region 公开方法
@@ -54,6 +57,8 @@ namespace ShoesOrderPrint
         {
 
         }
+
+        #region 数据查询
         /// <summary>
         /// 设置省份
         /// </summary>
@@ -73,19 +78,45 @@ namespace ShoesOrderPrint
             string sql = string.Format("select CityName from T_City,T_Promary where T_City.ProID=T_Promary.ProID and T_Promary.ProName='{0}'", proName);
             return SqlHelper.ExecuteReader(CommandType.Text, sql);
         }
+        #endregion
+
+        #region 通用方法
+        /// <summary>
+        /// 设置中间屏幕
+        /// </summary>
+        /// <param name="form"></param>
+        public void SetCenterScreen(Form form)
+        {
+            int height = System.Windows.Forms.SystemInformation.WorkingArea.Height;
+            int width = System.Windows.Forms.SystemInformation.WorkingArea.Width;
+            int formheight = form.Size.Height;
+            int formwidth = form.Size.Width;
+
+            int newformx = width / 2 - formwidth / 2;
+            int newformy = height / 2 - formheight / 2;
+
+            form.SetDesktopLocation(newformx, newformy);
+        }
+        #endregion
+        
+
+        #region 快递单相关方法
+        #endregion
+
+        #region 打印相关方法
         /// <summary>
         /// 打印预览
         /// </summary>
         public bool PrintPreview(string templateName, List<MExpressItemConfig> myList)
         {
-            if (myList == null||string.IsNullOrEmpty(templateName))
+            if (myList == null || string.IsNullOrEmpty(templateName))
                 return false;
             string ImagePath = AppDomain.CurrentDomain.BaseDirectory + @"BackImage\{0}.jpg";
             ImagePath = string.Format(ImagePath, templateName);
             Image backImg = Image.FromFile(ImagePath);
             FrmPreview mFrmPreview = new FrmPreview();
-            mFrmPreview.Width = backImg.Width+20;
-            mFrmPreview.Height = backImg.Height+30;
+            mFrmPreview.Width = backImg.Width + 20;
+            mFrmPreview.Height = backImg.Height + 30;
             mFrmPreview.BackgroundImage = backImg;
             mFrmPreview.MaximizeBox = false;
 
@@ -131,7 +162,7 @@ namespace ShoesOrderPrint
                 //获取名称
                 string name = ItemConfigModel.ItemlCode;
                 if (!string.IsNullOrEmpty(ItemConfigModel.TemplateName))
-                    name = name.Replace("_","");              
+                    name = name.Replace("_", "");
                 foreach (var prop in props)
                 {
                     if (name == prop.Name)
@@ -147,7 +178,7 @@ namespace ShoesOrderPrint
         /// 表示需要打印的数据源集合
         /// </summary>
         /// <param name="mList"></param>
-        public void Print( string templateName,MExpress mExpress) 
+        public void Print(string templateName, MExpress mExpress)
         {
             if (mExpress == null || string.IsNullOrEmpty(templateName))
                 return;
@@ -157,19 +188,23 @@ namespace ShoesOrderPrint
             string ImagePath = AppDomain.CurrentDomain.BaseDirectory + @"BackImage\{0}.jpg";
             ImagePath = string.Format(ImagePath, templateName);
             Image backImg = Image.FromFile(ImagePath);
-             //设置打印用的纸张 当设置为Custom的时候，可以自定义纸张的大小，还可以选择A4,A5等常用纸型
+            //设置打印用的纸张 当设置为Custom的时候，可以自定义纸张的大小，还可以选择A4,A5等常用纸型
             PrintDocument mPrintDocument = new PrintDocument();
             mPrintDocument.PrintPage += mPrintDocument_PrintPage;
             mPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("Custum", backImg.Width, backImg.Height);
             mPrintDocument.DefaultPageSettings.Landscape = true;
             mPrintDocument.Print();
+
+            //更新打印状态
+            mExpress.IsPrint = "是";
+            m_ExpressBLL.Update(mExpress);
         }
         /// <summary>
         /// 表示获取打印主表数据
         /// </summary>
         /// <param name="sqlWhere"></param>
         /// <returns></returns>
-        public List<MPrintMain>  GetPrintMainSource(string sqlWhere="")
+        public List<MPrintMain> GetPrintMainSource(string sqlWhere = "")
         {
             List<MPrintMain> myList = new List<MPrintMain>();
             IEnumerable<MPrintMain> IEList = m_PrintMainBLL.QueryList(sqlWhere);
@@ -181,22 +216,7 @@ namespace ShoesOrderPrint
             }
             return myList;
         }
-        /// <summary>
-        /// 设置中间屏幕
-        /// </summary>
-        /// <param name="form"></param>
-        public void SetCenterScreen(Form form)
-        {
-            int height = System.Windows.Forms.SystemInformation.WorkingArea.Height;
-            int width = System.Windows.Forms.SystemInformation.WorkingArea.Width;
-            int formheight = form.Size.Height;
-            int formwidth = form.Size.Width;
-
-            int newformx = width / 2 - formwidth / 2;
-            int newformy = height / 2 - formheight / 2;
-
-            form.SetDesktopLocation(newformx, newformy);
-        }
+        #endregion
         #endregion
 
         #region 私有方法

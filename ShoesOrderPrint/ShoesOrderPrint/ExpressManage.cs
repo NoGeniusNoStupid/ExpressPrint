@@ -15,6 +15,7 @@ namespace ShoesOrderPrint
 {
     public partial class ExpressManage : BaseForm
     {
+        #region 字段
         /// <summary>
         /// 表示快递业务逻辑层
         /// </summary>
@@ -36,6 +37,7 @@ namespace ShoesOrderPrint
         /// 是否界面加载
         /// </summary>
         bool isPageLoad = true;
+        #endregion
 
         #region 事件
         /// <summary>
@@ -50,13 +52,21 @@ namespace ShoesOrderPrint
                 t_dgv_Data.AutoGenerateColumns = false;//不添加额外列
                 t_dgv_Data.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;//列头居中
                 t_dgv_Data.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;  //自动调动datagridview的行高度
-               
+                
+                //设置快递类型
+                List<MPrintMain> myList = m_CommonBLL.GetPrintMainSource();
+                foreach (MPrintMain item in myList)
+                {
+                    t_cmg_ExpressType.Items.Add(item.TemplateName);
+                }
+                t_cmg_ExpressType.SelectedIndex = -1;
+                //绑定数据
                 t_txt_Search_Click(null, null);
 
                 //设置显示列
                 List<MColumnStyle> list = m_ColumnStyleBLL.QueryList("where Style_Name='Manage0101' order by Column_Index");
                 if (list == null)
-                    return;
+                    return;               
                 SetShowColumns(list);
                
             }
@@ -78,9 +88,13 @@ namespace ShoesOrderPrint
             {
                 //获取订单号
                 string expressNo = t_txt_ExpressNo.Text;
+                string expressTyep = t_cmg_ExpressType.Text;
                 string expressNoSql = string.Empty;
+                string expressTyepSql = string.Empty;
                 if (!string.IsNullOrEmpty(expressNo))
                     expressNoSql = string.Format("Express_No like '%{0}%'", expressNo);
+                if (!string.IsNullOrEmpty(expressTyep))
+                    expressTyepSql = string.Format("Expree_Type like '%{0}%'", expressTyep);
                 //获取日期选择
                 string DateSql=string.Empty;
                 if(txRadioButton1.Checked)
@@ -89,16 +103,18 @@ namespace ShoesOrderPrint
                     DateSql = string.Format(@"{0}>=datetime('now','start of day','-7 day','weekday 1') AND {0}<datetime('now','start of day','+0 day','weekday 1')", "Expree_Date");//周
                 if (txRadioButton3.Checked)
                     DateSql = string.Format(" strftime('%Y.%m',{0})=strftime('%Y.%m','now')", "Expree_Date");//月
-                if (!string.IsNullOrEmpty(DateSql)&&!string.IsNullOrEmpty(expressNo))
+                if (!string.IsNullOrEmpty(expressTyep) && !string.IsNullOrEmpty(expressNo))
+                    expressTyepSql = "and" + expressTyepSql;
+                if (!string.IsNullOrEmpty(DateSql) && (!string.IsNullOrEmpty(expressNo) || !string.IsNullOrEmpty(expressTyep)))
                     DateSql = "and" + DateSql;
                 string sqlWhere = string.Empty;
-                if (string.IsNullOrEmpty(DateSql) && string.IsNullOrEmpty(expressNo))
+                if (string.IsNullOrEmpty(DateSql) && string.IsNullOrEmpty(expressNo) && string.IsNullOrEmpty(expressTyepSql))
                 {
                     sqlWhere = "order by Expree_Date";
                 }
                 else
                 {
-                    sqlWhere = string.Format("where {0} {1} {2}", expressNoSql, DateSql, "order by Expree_Date");
+                    sqlWhere = string.Format("where {0} {1} {2} {3}", expressNoSql, expressTyepSql, DateSql, "order by Expree_Date");
                 }
 
                 IEnumerable<MExpress> myList = m_ExpressBLL.QueryList(sqlWhere);
@@ -184,13 +200,34 @@ namespace ShoesOrderPrint
                     this.Warning("请先选择要打印的快递单！");
                     return;
                 }
-                MExpress mExpress = this.t_dgv_Data.CurrentRow.DataBoundItem as MExpress;
-                if (string.IsNullOrEmpty(mExpress.ExpreeType))
-                 {
-                     this.Info("此份快递单还为选择快递类型！");
-                     return;
-                 }
-                m_CommonBLL.Print(mExpress.ExpreeType, mExpress);
+                if (t_dgv_Data.SelectedRows == null)
+                    return;
+                DataGridViewSelectedRowCollection myRows = t_dgv_Data.SelectedRows;
+                if (myRows == null || myRows.Count<=0)
+                    return;
+                //批量打印
+                string printFailure = string.Empty;
+                int printFaliureCount=0;
+                foreach (DataGridViewRow item in myRows)
+                {
+                    MExpress myExpress = item.DataBoundItem as MExpress;
+                    if (string.IsNullOrEmpty(myExpress.ExpreeType))
+                    {
+                        printFailure += myExpress.ExpressNo+",";
+                        printFaliureCount+=1;
+                        continue;
+                    }
+                    m_CommonBLL.Print(myExpress.ExpreeType, myExpress);
+                }
+                if (printFaliureCount!=0)
+                {
+                    printFailure = printFailure.TrimEnd(',');
+                    this.Info(string.Format(@"打印成功！共{0}单，失败{1}单！原因：未选择快递类型！
+                    分别为：{2}", myRows.Count, printFaliureCount, printFailure));
+                }
+                this.Info(string.Format("打印成功！共{0}单！", myRows.Count));    
+                //刷新
+                t_txt_Search_Click(null, null);
             }
             catch (Exception ex)
             {
@@ -273,8 +310,7 @@ namespace ShoesOrderPrint
             }
         }
 
-        #endregion
-
+        
         /// <summary>
         /// 维护列点击
         /// </summary>
@@ -297,8 +333,6 @@ namespace ShoesOrderPrint
                 this.Warning(ex.Message);
             }
         }
-
-
         /// <summary>
         /// 设置显示列
         /// </summary>
@@ -326,16 +360,14 @@ namespace ShoesOrderPrint
 
             isPageLoad = false;
         }
-
         private void t_btn_Import_Click(object sender, EventArgs e)
         {
             this.Info("暂未开放！稍后实现");
         }
-
         private void t_btn_Export_Click(object sender, EventArgs e)
         {
             this.Info("暂未开放！稍后实现");
         }
-
+        #endregion
     }
 }
