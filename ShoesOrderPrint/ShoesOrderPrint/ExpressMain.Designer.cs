@@ -34,12 +34,13 @@
             this.t_btn_DataBackup = new TX.Framework.WindowUI.Controls.TXButton();
             this.label1 = new System.Windows.Forms.Label();
             this.t_btn_Printer = new TX.Framework.WindowUI.Controls.TXButton();
+            this.t_btn_ExpressNoConfig = new TX.Framework.WindowUI.Controls.TXButton();
             this.SuspendLayout();
             // 
             // txButton4
             // 
             this.txButton4.Image = null;
-            this.txButton4.Location = new System.Drawing.Point(171, 116);
+            this.txButton4.Location = new System.Drawing.Point(207, 113);
             this.txButton4.Name = "txButton4";
             this.txButton4.Size = new System.Drawing.Size(100, 28);
             this.txButton4.TabIndex = 7;
@@ -50,7 +51,7 @@
             // txButton2
             // 
             this.txButton2.Image = null;
-            this.txButton2.Location = new System.Drawing.Point(171, 82);
+            this.txButton2.Location = new System.Drawing.Point(46, 113);
             this.txButton2.Name = "txButton2";
             this.txButton2.Size = new System.Drawing.Size(100, 28);
             this.txButton2.TabIndex = 6;
@@ -61,7 +62,7 @@
             // txButton1
             // 
             this.txButton1.Image = null;
-            this.txButton1.Location = new System.Drawing.Point(171, 48);
+            this.txButton1.Location = new System.Drawing.Point(46, 64);
             this.txButton1.Name = "txButton1";
             this.txButton1.Size = new System.Drawing.Size(100, 28);
             this.txButton1.TabIndex = 5;
@@ -72,7 +73,7 @@
             // t_btn_DataBackup
             // 
             this.t_btn_DataBackup.Image = null;
-            this.t_btn_DataBackup.Location = new System.Drawing.Point(171, 184);
+            this.t_btn_DataBackup.Location = new System.Drawing.Point(380, 64);
             this.t_btn_DataBackup.Name = "t_btn_DataBackup";
             this.t_btn_DataBackup.Size = new System.Drawing.Size(100, 28);
             this.t_btn_DataBackup.TabIndex = 8;
@@ -93,7 +94,7 @@
             // t_btn_Printer
             // 
             this.t_btn_Printer.Image = null;
-            this.t_btn_Printer.Location = new System.Drawing.Point(171, 150);
+            this.t_btn_Printer.Location = new System.Drawing.Point(207, 162);
             this.t_btn_Printer.Name = "t_btn_Printer";
             this.t_btn_Printer.Size = new System.Drawing.Size(100, 28);
             this.t_btn_Printer.TabIndex = 10;
@@ -101,11 +102,23 @@
             this.t_btn_Printer.UseVisualStyleBackColor = true;
             this.t_btn_Printer.Click += new System.EventHandler(this.t_btn_Printer_Click);
             // 
+            // t_btn_ExpressNoConfig
+            // 
+            this.t_btn_ExpressNoConfig.Image = null;
+            this.t_btn_ExpressNoConfig.Location = new System.Drawing.Point(207, 64);
+            this.t_btn_ExpressNoConfig.Name = "t_btn_ExpressNoConfig";
+            this.t_btn_ExpressNoConfig.Size = new System.Drawing.Size(100, 28);
+            this.t_btn_ExpressNoConfig.TabIndex = 11;
+            this.t_btn_ExpressNoConfig.Text = "快递单号配置";
+            this.t_btn_ExpressNoConfig.UseVisualStyleBackColor = true;
+            this.t_btn_ExpressNoConfig.Click += new System.EventHandler(this.t_btn_ExpressNoConfig_Click);
+            // 
             // ExpressMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(500, 350);
+            this.Controls.Add(this.t_btn_ExpressNoConfig);
             this.Controls.Add(this.t_btn_Printer);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.t_btn_DataBackup);
@@ -133,5 +146,6 @@
         private TX.Framework.WindowUI.Controls.TXButton t_btn_DataBackup;
         private System.Windows.Forms.Label label1;
         private TX.Framework.WindowUI.Controls.TXButton t_btn_Printer;
+        private TX.Framework.WindowUI.Controls.TXButton t_btn_ExpressNoConfig;
     }
 }

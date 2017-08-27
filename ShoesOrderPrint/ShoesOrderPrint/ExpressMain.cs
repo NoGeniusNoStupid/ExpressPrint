@@ -77,5 +77,10 @@ namespace ShoesOrderPrint
             FrmPrinterSetting myForm = new FrmPrinterSetting();
             myForm.ShowDialog();
         }
+        //快递单号配置
+        private void t_btn_ExpressNoConfig_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

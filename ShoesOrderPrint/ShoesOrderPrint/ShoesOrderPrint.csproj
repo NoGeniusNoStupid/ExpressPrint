@@ -76,12 +76,14 @@
     <Compile Include="BLL\CommonBLL.cs" />
     <Compile Include="BLL\ExpressBLL.cs" />
     <Compile Include="BLL\ExpressItemConfigBLL.cs" />
+    <Compile Include="BLL\ExpressNumBll.cs" />
     <Compile Include="BLL\GetPrinter.cs" />
     <Compile Include="BLL\SoftReg.cs" />
     <Compile Include="BLL\PrintMainBLL.cs" />
     <Compile Include="DAL\ColumnStyleDal.cs" />
     <Compile Include="DAL\ExpressDal.cs" />
     <Compile Include="DAL\ExpressItemConfigDal.cs" />
+    <Compile Include="DAL\ExpressNumDal.cs" />
     <Compile Include="DAL\PrintMainDal.cs" />
     <Compile Include="ExpressMain.cs">
       <SubType>Form</SubType>
@@ -113,6 +115,12 @@
     <Compile Include="FrmColumns.Designer.cs">
       <DependentUpon>FrmColumns.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmExpressNumConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmExpressNumConfig.Designer.cs">
+      <DependentUpon>FrmExpressNumConfig.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmPreview.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -138,6 +146,7 @@
       <DependentUpon>FrmPrintItemConfig.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\MColumnStyle.cs" />
+    <Compile Include="Model\MExpressNum.cs" />
     <Compile Include="Model\MPrintMain.cs" />
     <Compile Include="Model\MExpress.cs" />
     <Compile Include="Model\MExpressConfig.cs" />
@@ -159,6 +168,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmColumns.resx">
       <DependentUpon>FrmColumns.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmExpressNumConfig.resx">
+      <DependentUpon>FrmExpressNumConfig.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPreview.resx">
       <DependentUpon>FrmPreview.cs</DependentUpon>
