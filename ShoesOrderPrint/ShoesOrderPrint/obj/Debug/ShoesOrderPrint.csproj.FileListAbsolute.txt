@@ -123,3 +123,4 @@ E:\ExpressPrint\ShoesOrderPrint\ShoesOrderPrint\obj\Debug\ShoesOrderPrint.csproj
 D:\DevelopMent\ExpressPrint\ShoesOrderPrint\ShoesOrderPrint\bin\Debug\ShoesOrderPrint.exe.config
 D:\DevelopMent\ExpressPrint\ShoesOrderPrint\ShoesOrderPrint\obj\Debug\ShoesOrderPrint.exe
 D:\DevelopMent\ExpressPrint\ShoesOrderPrint\ShoesOrderPrint\obj\Debug\ShoesOrderPrint.pdb
+E:\ExpressPrint\ShoesOrderPrint\ShoesOrderPrint\obj\Debug\ShoesOrderPrint.FrmExpressNumConfig.resources

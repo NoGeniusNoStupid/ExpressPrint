@@ -57,6 +57,11 @@ namespace ShoesOrderPrint
         /// 表示通用的业务逻辑类
         /// </summary>
         CommonBLL mCommonBLL = new CommonBLL();
+        /// <summary>
+        /// 创建快递流水号管理对象
+        /// </summary>
+        ExpressNumBll m_ExpressItemConfigBLL = new ExpressNumBll();
+       
         #endregion
 
         #region 方法
@@ -101,6 +106,7 @@ namespace ShoesOrderPrint
             {
                 this.Info("保存成功！");
                 t_lbl_Status.Text = "状态：" + m_Express.Status;
+                t_txt_ExpressNum.Text = m_Express.ExpressNo;
             }
             else
             {
@@ -165,6 +171,31 @@ namespace ShoesOrderPrint
                 string name = myReader.GetString(myReader.GetOrdinal("CityName"));
                 myComboBox.Items.Add(name);
             }
+        }
+        /// <summary>
+        /// 保存前执行校验
+        /// </summary>
+        /// <param name="m_Express"></param>
+        /// <returns></returns>
+        private bool BeforeSave(MExpress m_Express)
+        {
+            bool isPass = true;
+            if (string.IsNullOrEmpty(m_Express.ExpreeType))
+            {
+                this.Warning("请选择快递类型");
+                return false;
+            }
+            //自动生成快递单号          
+            string mExpressNo = m_ExpressItemConfigBLL.GetExpressNo(m_Express.ExpreeType);
+            if (!string.IsNullOrEmpty(mExpressNo))
+                m_Express.ExpressNo = mExpressNo;
+
+            if (string.IsNullOrEmpty(m_Express.ExpressNo))
+            {
+                this.Warning("请输入快递单号");
+                return false ;
+            }
+            return isPass;
         }
         #endregion
 
@@ -342,12 +373,17 @@ namespace ShoesOrderPrint
                 if (m_Express.Status == "新建")//状态
                 {
                     m_Express.Status = "已保存";
+                    if (!BeforeSave(m_Express))
+                        return;
                     //插入
                     int affectRecrd = mExpressBLL.Insert(m_Express);
                     SaveAfter(affectRecrd);
                 }
                 else
                 {
+                  
+                    if (!BeforeSave(m_Express))
+                        return;
                     //更新
                     int affectRecrd = mExpressBLL.Update(m_Express);
                     SaveAfter(affectRecrd);
@@ -522,5 +558,6 @@ namespace ShoesOrderPrint
 
         }
         #endregion
+
     }
 }

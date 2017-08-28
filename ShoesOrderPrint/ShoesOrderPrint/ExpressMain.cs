@@ -80,7 +80,8 @@ namespace ShoesOrderPrint
         //快递单号配置
         private void t_btn_ExpressNoConfig_Click(object sender, EventArgs e)
         {
-
+            FrmExpressNumConfig myForm = new FrmExpressNumConfig();
+            myForm.ShowDialog();
         }
     }
 }

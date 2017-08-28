@@ -28,22 +28,22 @@ namespace ShoesOrderPrint.Model
            get;
            set;
        }
-       public string ExpressStartNum
+       public int ExpressStartNum
        {
            get;
            set;
        }
-       public string SerialNum
+       public int SerialNum
        {
            get;
            set;
        }
-       public string MaxNum
+       public int MaxNum
        {
            get;
            set;
        }
-       public string ExpressBeforeNum
+       public int ExpressBeforeNum
        {
            get;
            set;

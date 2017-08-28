@@ -56,7 +56,7 @@ VALUES (
         #endregion
 
        #region 删除一条记录 +int Delete(string UUID)
-       public int Delete(string columnid)
+       public int Delete(string UUID)
        {
            const string sql = "DELETE FROM T_ExpressNum WHERE [UUID] = @UUID";
            return SqlHelper.ExecuteNonQuery(CommandType.Text, sql, new SQLiteParameter("@UUID", UUID));

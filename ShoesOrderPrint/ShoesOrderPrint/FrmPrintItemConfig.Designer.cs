@@ -30,7 +30,7 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.t_cmg_ = new System.Windows.Forms.DataGridView();
+            this.t_dgv_Data = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,11 +52,11 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.t_cmg_)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.t_dgv_Data)).BeginInit();
             this.txGroupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // t_cmg_
+            // t_dgv_Data
             // 
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
@@ -65,9 +65,9 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.t_cmg_.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.t_cmg_.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.t_cmg_.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.t_dgv_Data.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.t_dgv_Data.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.t_dgv_Data.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2,
             this.Column3,
@@ -83,13 +83,13 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.t_cmg_.DefaultCellStyle = dataGridViewCellStyle2;
-            this.t_cmg_.Location = new System.Drawing.Point(6, 94);
-            this.t_cmg_.Name = "t_cmg_";
-            this.t_cmg_.RowTemplate.Height = 23;
-            this.t_cmg_.Size = new System.Drawing.Size(742, 529);
-            this.t_cmg_.TabIndex = 0;
-            this.t_cmg_.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.t_dgv_PrintItemConfig_DataError);
+            this.t_dgv_Data.DefaultCellStyle = dataGridViewCellStyle2;
+            this.t_dgv_Data.Location = new System.Drawing.Point(6, 94);
+            this.t_dgv_Data.Name = "t_dgv_Data";
+            this.t_dgv_Data.RowTemplate.Height = 23;
+            this.t_dgv_Data.Size = new System.Drawing.Size(742, 529);
+            this.t_dgv_Data.TabIndex = 0;
+            this.t_dgv_Data.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.t_dgv_PrintItemConfig_DataError);
             // 
             // Column1
             // 
@@ -354,14 +354,14 @@
             this.Controls.Add(this.txGroupBox1);
             this.Controls.Add(this.t_btn_SaveConfig);
             this.Controls.Add(this.t_btn_Preview);
-            this.Controls.Add(this.t_cmg_);
+            this.Controls.Add(this.t_dgv_Data);
             this.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Location = new System.Drawing.Point(0, 0);
             this.Name = "FrmPrintItemConfig";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "打印项配置";
             this.Load += new System.EventHandler(this.FrmPrintItemConfig_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.t_cmg_)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.t_dgv_Data)).EndInit();
             this.txGroupBox1.ResumeLayout(false);
             this.txGroupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -370,7 +370,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView t_cmg_;
+        private System.Windows.Forms.DataGridView t_dgv_Data;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;

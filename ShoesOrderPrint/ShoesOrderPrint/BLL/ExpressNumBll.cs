@@ -49,7 +49,7 @@ namespace ShoesOrderPrint.BLL
         {
             return _dao.Update(model);
         }
-       
+        #endregion
 
         #region 分页查询一个集合 +IEnumerable<T_Column_Style> QueryList(int index, int size, object wheres, string orderField, bool isDesc = true)
         /// <summary>
@@ -61,7 +61,7 @@ namespace ShoesOrderPrint.BLL
         /// <param name="orderField">排序字段</param>
         /// <param name="isDesc">是否降序排序</param>
         /// <returns>实体集合</returns>
-        public List<MExpressNum> QueryList(object wheres)
+        public List<MExpressNum> QueryList(object wheres= null)
         {
 
             IEnumerable<MExpressNum> myList = _dao.QueryList(wheres);
@@ -87,5 +87,27 @@ namespace ShoesOrderPrint.BLL
             return _dao.QuerySingle(column_id);
         }
         #endregion
-    }
+
+       #region 获取快递流水号
+        public string GetExpressNo(string expressName)
+        {
+            string expressNo = string.Empty;
+            List<MExpressNum> List = QueryList(string.Format("where ExpressName='{0}'", expressName));
+            if (List == null || List.Count <= 0)
+                return null;
+            MExpressNum mExpressNum = List[0];
+            if (mExpressNum.ExrepssNumRule == "否")
+                return null;
+            if (mExpressNum.MaxNum == 0)
+            {
+                expressNo = mExpressNum.ExpressBeforeNum + mExpressNum.ExpressStartNum.ToString().PadLeft(mExpressNum.SerialNum,'0');
+            }
+            else
+            {
+                expressNo = mExpressNum.ExpressBeforeNum + mExpressNum.MaxNum.ToString().PadLeft(mExpressNum.SerialNum, '0');
+            }
+            return expressNo;
+        }
+       #endregion
+   }
 }

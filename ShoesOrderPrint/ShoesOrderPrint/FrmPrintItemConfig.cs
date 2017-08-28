@@ -40,8 +40,8 @@ namespace ShoesOrderPrint
         {
             try
             {
-                t_cmg_.AutoGenerateColumns = false;//不添加额外列
-                t_cmg_.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;//列头居中
+                t_dgv_Data.AutoGenerateColumns = false;//不添加额外列
+                t_dgv_Data.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;//列头居中
                 //设置快递类型
                 List<MPrintMain> myList = m_CommonBLL.GetPrintMainSource();
                 foreach (MPrintMain item in myList)
@@ -63,7 +63,7 @@ namespace ShoesOrderPrint
         {
             try
             {
-                 List<MExpressItemConfig> myList = t_cmg_.DataSource as List<MExpressItemConfig>;
+                 List<MExpressItemConfig> myList = t_dgv_Data.DataSource as List<MExpressItemConfig>;
                 
                  if (txComboBox1.SelectedIndex == -1)
                  {
@@ -91,7 +91,7 @@ namespace ShoesOrderPrint
         {
               try
               {
-                  List<MExpressItemConfig> myList = t_cmg_.DataSource as List<MExpressItemConfig>;
+                  List<MExpressItemConfig> myList = t_dgv_Data.DataSource as List<MExpressItemConfig>;
                   if (myList == null)
                       return;
                   //更新
@@ -117,7 +117,7 @@ namespace ShoesOrderPrint
                   }
                   //绑定数据
                 List<MExpressItemConfig> myList= m_CommonBLL.GetPrintItemConfig(txComboBox1.Text);
-                t_cmg_.DataSource = myList;
+                t_dgv_Data.DataSource = myList;
                 if (myList != null && myList.Count > 0)
                 {
                     t_cmg_Font.Text = myList[0].Font;
@@ -165,7 +165,7 @@ namespace ShoesOrderPrint
         {
             try
             {
-                List<MExpressItemConfig> myList = t_cmg_.DataSource as List<MExpressItemConfig>;
+                List<MExpressItemConfig> myList = t_dgv_Data.DataSource as List<MExpressItemConfig>;
                 if (myList == null)
                     return;
                 string color = "black";
