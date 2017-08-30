@@ -33,7 +33,6 @@
             this.txButton1 = new TX.Framework.WindowUI.Controls.TXButton();
             this.t_btn_DataBackup = new TX.Framework.WindowUI.Controls.TXButton();
             this.label1 = new System.Windows.Forms.Label();
-            this.t_btn_Printer = new TX.Framework.WindowUI.Controls.TXButton();
             this.t_btn_ExpressNoConfig = new TX.Framework.WindowUI.Controls.TXButton();
             this.SuspendLayout();
             // 
@@ -91,17 +90,6 @@
             this.label1.TabIndex = 9;
             this.label1.Text = "*若数据重要请定期备份";
             // 
-            // t_btn_Printer
-            // 
-            this.t_btn_Printer.Image = null;
-            this.t_btn_Printer.Location = new System.Drawing.Point(207, 162);
-            this.t_btn_Printer.Name = "t_btn_Printer";
-            this.t_btn_Printer.Size = new System.Drawing.Size(100, 28);
-            this.t_btn_Printer.TabIndex = 10;
-            this.t_btn_Printer.Text = "打印机配置";
-            this.t_btn_Printer.UseVisualStyleBackColor = true;
-            this.t_btn_Printer.Click += new System.EventHandler(this.t_btn_Printer_Click);
-            // 
             // t_btn_ExpressNoConfig
             // 
             this.t_btn_ExpressNoConfig.Image = null;
@@ -119,7 +107,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(500, 350);
             this.Controls.Add(this.t_btn_ExpressNoConfig);
-            this.Controls.Add(this.t_btn_Printer);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.t_btn_DataBackup);
             this.Controls.Add(this.txButton4);
@@ -145,7 +132,6 @@
         private TX.Framework.WindowUI.Controls.TXButton txButton1;
         private TX.Framework.WindowUI.Controls.TXButton t_btn_DataBackup;
         private System.Windows.Forms.Label label1;
-        private TX.Framework.WindowUI.Controls.TXButton t_btn_Printer;
         private TX.Framework.WindowUI.Controls.TXButton t_btn_ExpressNoConfig;
     }
 }

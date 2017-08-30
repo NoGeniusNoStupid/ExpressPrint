@@ -91,7 +91,6 @@ E:\ExpressPrint\ShoesOrderPrint\ShoesOrderPrint\obj\Debug\ShoesOrderPrint.Expres
 E:\ExpressPrint\ShoesOrderPrint\ShoesOrderPrint\obj\Debug\ShoesOrderPrint.Form1.resources
 E:\ExpressPrint\ShoesOrderPrint\ShoesOrderPrint\obj\Debug\ShoesOrderPrint.FrmColumns.resources
 E:\ExpressPrint\ShoesOrderPrint\ShoesOrderPrint\obj\Debug\ShoesOrderPrint.FrmPreview.resources
-E:\ExpressPrint\ShoesOrderPrint\ShoesOrderPrint\obj\Debug\ShoesOrderPrint.FrmPrintConfig.resources
 E:\ExpressPrint\ShoesOrderPrint\ShoesOrderPrint\obj\Debug\ShoesOrderPrint.FrmPrinterSetting.resources
 E:\ExpressPrint\ShoesOrderPrint\ShoesOrderPrint\obj\Debug\ShoesOrderPrint.FrmPrintItemConfig.resources
 E:\ExpressPrint\ShoesOrderPrint\ShoesOrderPrint\obj\Debug\ShoesOrderPrint.Properties.Resources.resources
@@ -119,10 +118,10 @@ E:\ExpressPrint\ShoesOrderPrint\ShoesOrderPrint\bin\Debug\office.dll
 E:\ExpressPrint\ShoesOrderPrint\ShoesOrderPrint\bin\Debug\Microsoft.Vbe.Interop.dll
 E:\ExpressPrint\ShoesOrderPrint\ShoesOrderPrint\bin\Debug\Microsoft.Office.Interop.Excel.xml
 E:\ExpressPrint\ShoesOrderPrint\ShoesOrderPrint\bin\Debug\office.xml
-E:\ExpressPrint\ShoesOrderPrint\ShoesOrderPrint\obj\Debug\ShoesOrderPrint.csprojResolveAssemblyReference.cache
 D:\DevelopMent\ExpressPrint\ShoesOrderPrint\ShoesOrderPrint\bin\Debug\ShoesOrderPrint.exe.config
 D:\DevelopMent\ExpressPrint\ShoesOrderPrint\ShoesOrderPrint\obj\Debug\ShoesOrderPrint.exe
 D:\DevelopMent\ExpressPrint\ShoesOrderPrint\ShoesOrderPrint\obj\Debug\ShoesOrderPrint.pdb
 E:\ExpressPrint\ShoesOrderPrint\ShoesOrderPrint\obj\Debug\ShoesOrderPrint.FrmExpressNumConfig.resources
 E:\ExpressPrint\ShoesOrderPrint\ShoesOrderPrint\bin\Debug\HJ.SQLiteBackup.dll
 E:\ExpressPrint\ShoesOrderPrint\ShoesOrderPrint\bin\Debug\BuckUp\备份说明.txt
+E:\ExpressPrint\ShoesOrderPrint\ShoesOrderPrint\obj\Debug\ShoesOrderPrint.csprojResolveAssemblyReference.cache

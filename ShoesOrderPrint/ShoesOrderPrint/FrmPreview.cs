@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TX.Framework.WindowUI.Controls;
 using TX.Framework.WindowUI.Forms;
 
 namespace ShoesOrderPrint
@@ -36,6 +37,12 @@ namespace ShoesOrderPrint
             m_CommonBLL.InitialControl(this.Controls);
 
             MessageBox.Show("保存成功");
+        }
+
+        private void FrmPreview_Load(object sender, EventArgs e)
+        {
+           
+
         }
     }
 }

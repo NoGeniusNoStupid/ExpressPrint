@@ -50,6 +50,10 @@ namespace ShoesOrderPrint
         /// 快递单业务逻辑类
         /// </summary>
         ExpressBLL m_ExpressBLL = new ExpressBLL();
+        /// <summary>
+        /// 打印机配置
+        /// </summary>
+        MPrinter m_MPrinter;
         #endregion
 
         #region 公开方法
@@ -99,7 +103,6 @@ namespace ShoesOrderPrint
         }
         #endregion
         
-
         #region 快递单相关方法
         #endregion
 
@@ -178,21 +181,40 @@ namespace ShoesOrderPrint
         /// 表示需要打印的数据源集合
         /// </summary>
         /// <param name="mList"></param>
-        public void Print(string templateName, MExpress mExpress)
+        public void Print(MExpress mExpress)
         {
-            if (mExpress == null || string.IsNullOrEmpty(templateName))
+            if (mExpress == null || string.IsNullOrEmpty(mExpress.ExpreeType))
                 return;
-            m_List = GetPrintResource(templateName, mExpress);
+            m_List = GetPrintResource(mExpress.ExpreeType, mExpress);
             if (m_List == null)
                 return;
-            string ImagePath = AppDomain.CurrentDomain.BaseDirectory + @"BackImage\{0}.jpg";
-            ImagePath = string.Format(ImagePath, templateName);
-            Image backImg = Image.FromFile(ImagePath);
+           
             //设置打印用的纸张 当设置为Custom的时候，可以自定义纸张的大小，还可以选择A4,A5等常用纸型
             PrintDocument mPrintDocument = new PrintDocument();
+            mPrintDocument.PrinterSettings.PrinterName = m_MPrinter.Printer;            
+            if (m_MPrinter.NowHeight != 0 && m_MPrinter.NowWeight!=0)
+                mPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("Custum", Convert.ToInt32(m_MPrinter.NowWeight) / 10, Convert.ToInt32(m_MPrinter.NowHeight) / 10);   
+            else
+                mPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("Custum", Convert.ToInt32(m_MPrinter.IniWeight) / 10, Convert.ToInt32(m_MPrinter.IniHeight) / 10);
+            if (m_MPrinter.PrintFoward == "横向")
+                mPrintDocument.DefaultPageSettings.Landscape = true;
+            else
+                mPrintDocument.DefaultPageSettings.Landscape = false;
+            int topAway = 0;
+            int leftAway = 0;
+            if (m_MPrinter.TopAway!=0)
+                topAway=Convert.ToInt32(m_MPrinter.TopAway) / 10;
+            if (m_MPrinter.LeftAway != 0)
+                leftAway = Convert.ToInt32(m_MPrinter.LeftAway) / 10;
+            if (topAway > 0)
+                mPrintDocument.DefaultPageSettings.Margins.Top = topAway;
+            else
+                mPrintDocument.DefaultPageSettings.Margins.Bottom = topAway;
+            if (leftAway > 0)
+                mPrintDocument.DefaultPageSettings.Margins.Left = leftAway;
+            else
+                mPrintDocument.DefaultPageSettings.Margins.Right = leftAway;
             mPrintDocument.PrintPage += mPrintDocument_PrintPage;
-            mPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("Custum", backImg.Width, backImg.Height);
-            mPrintDocument.DefaultPageSettings.Landscape = true;
             mPrintDocument.Print();
 
             //更新打印状态
@@ -216,6 +238,46 @@ namespace ShoesOrderPrint
             }
             return myList;
         }
+
+
+        //单个打印
+        public void OnePrint(MExpress mExpress)
+        {
+            if (string.IsNullOrEmpty(mExpress.ExpreeType))
+            {
+                throw new Exception("请先选择快递类型！");         
+            }
+            //获取打印机配置
+            FrmPrinterSetting myForm = new FrmPrinterSetting(mExpress.ExpreeType);
+            myForm.ShowDialog();
+            if (myForm.result != DialogResult.OK)
+                return;
+            m_MPrinter = myForm.m_Printer;
+            Print(mExpress);
+        }
+        //批量打印
+        public void MorePrint(List<MExpress> mExpressList)
+        {
+            string templateName = mExpressList[0].ExpreeType;
+            var mExpress = mExpressList.FirstOrDefault(a => a.ExpreeType != templateName || string.IsNullOrEmpty(a.ExpreeType));
+            if(mExpress!=null)
+            {
+                throw new Exception("打印失败！所选记录中，存在不同类型的快递单。请重新选择！");
+            }
+            //获取打印机配置
+            FrmPrinterSetting myForm = new FrmPrinterSetting(templateName);
+            myForm.ShowDialog();
+            if (myForm.result != DialogResult.OK)
+                return;
+            m_MPrinter = myForm.m_Printer;
+            foreach (MExpress item in mExpressList)
+            {
+                Print(item);
+            }           
+        }
+
+       
+
         #endregion
         #endregion
 
@@ -245,9 +307,7 @@ namespace ShoesOrderPrint
                 return new TXTextBox();
             }
 
-        }
-
-       
+        }      
         /// <summary>
         /// 打印页面
         /// </summary>

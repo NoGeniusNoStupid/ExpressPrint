@@ -232,7 +232,7 @@ WHERE [UUID] = @UUID";
         /// </summary>
         /// <param name="wheres">条件匿名类</param>
         /// <returns>实体</returns>
-        public MExpress QuerySingle(object wheres)
+        public MExpress QueryModel(object wheres)
         {
             var list = QueryList(wheres);
             return list != null && list.Any() ? list.FirstOrDefault() : null;

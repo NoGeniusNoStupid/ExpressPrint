@@ -150,5 +150,12 @@ WHERE [UUID] = @UUID";
 
        }
        #endregion
+
+       #region 执行一条sql语句
+        public int ExecuteNonQuery(string sql)
+        {
+           return SqlHelper.ExecuteNonQuery(CommandType.Text, sql);
+        }
+        #endregion
     }
 }

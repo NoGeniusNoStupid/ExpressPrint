@@ -75,6 +75,7 @@
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.txGroupBox4 = new TX.Framework.WindowUI.Controls.TXGroupBox();
+            this.txButton2 = new TX.Framework.WindowUI.Controls.TXButton();
             this.t_dtp_ExpressDate = new TX.Framework.WindowUI.Controls.TXDateTimePicker();
             this.label19 = new System.Windows.Forms.Label();
             this.t_cmg_ExpressType = new TX.Framework.WindowUI.Controls.TXComboBox();
@@ -86,7 +87,6 @@
             this.t_tsm_Copy = new System.Windows.Forms.ToolStripMenuItem();
             this.t_tms_Save = new System.Windows.Forms.ToolStripMenuItem();
             this.t_tsm_Delete = new System.Windows.Forms.ToolStripMenuItem();
-            this.t_tsm_Open = new System.Windows.Forms.ToolStripMenuItem();
             this.t_tsm_Print = new System.Windows.Forms.ToolStripMenuItem();
             this.t_tsm_PrintExpress = new System.Windows.Forms.ToolStripMenuItem();
             this.t_tsm_PrintPreview = new System.Windows.Forms.ToolStripMenuItem();
@@ -94,7 +94,6 @@
             this.t_tsm_QuickIn = new System.Windows.Forms.ToolStripMenuItem();
             this.t_lbl_Status = new System.Windows.Forms.Label();
             this.t_pic_Express = new System.Windows.Forms.PictureBox();
-            this.txButton2 = new TX.Framework.WindowUI.Controls.TXButton();
             this.label24 = new System.Windows.Forms.Label();
             this.txGroupBox1.SuspendLayout();
             this.txGroupBox2.SuspendLayout();
@@ -723,6 +722,17 @@
             this.txGroupBox4.Text = "快递单信息";
             this.txGroupBox4.TextMargin = 6;
             // 
+            // txButton2
+            // 
+            this.txButton2.Image = null;
+            this.txButton2.Location = new System.Drawing.Point(503, 50);
+            this.txButton2.Name = "txButton2";
+            this.txButton2.Size = new System.Drawing.Size(39, 20);
+            this.txButton2.TabIndex = 27;
+            this.txButton2.Text = "查看";
+            this.txButton2.UseVisualStyleBackColor = true;
+            this.txButton2.Click += new System.EventHandler(this.txButton2_Click);
+            // 
             // t_dtp_ExpressDate
             // 
             this.t_dtp_ExpressDate.CalendarForeColor = System.Drawing.Color.Blue;
@@ -799,12 +809,11 @@
             this.t_tsm_Copy,
             this.t_tms_Save,
             this.t_tsm_Delete,
-            this.t_tsm_Open,
             this.t_tsm_Print,
             this.t_tsm_QuickIn});
             this.txMenuStrip1.Location = new System.Drawing.Point(3, 27);
             this.txMenuStrip1.Name = "txMenuStrip1";
-            this.txMenuStrip1.Size = new System.Drawing.Size(1184, 25);
+            this.txMenuStrip1.Size = new System.Drawing.Size(1200, 25);
             this.txMenuStrip1.TabIndex = 4;
             this.txMenuStrip1.Text = "txMenuStrip1";
             // 
@@ -836,13 +845,6 @@
             this.t_tsm_Delete.Text = "删除";
             this.t_tsm_Delete.Click += new System.EventHandler(this.t_tsm_Delete_Click);
             // 
-            // t_tsm_Open
-            // 
-            this.t_tsm_Open.Name = "t_tsm_Open";
-            this.t_tsm_Open.Size = new System.Drawing.Size(44, 21);
-            this.t_tsm_Open.Text = "打开";
-            this.t_tsm_Open.Click += new System.EventHandler(this.t_tsm_Open_Click);
-            // 
             // t_tsm_Print
             // 
             this.t_tsm_Print.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -856,21 +858,21 @@
             // t_tsm_PrintExpress
             // 
             this.t_tsm_PrintExpress.Name = "t_tsm_PrintExpress";
-            this.t_tsm_PrintExpress.Size = new System.Drawing.Size(124, 22);
+            this.t_tsm_PrintExpress.Size = new System.Drawing.Size(152, 22);
             this.t_tsm_PrintExpress.Text = "打印";
             this.t_tsm_PrintExpress.Click += new System.EventHandler(this.t_tsm_PrintExpress_Click);
             // 
             // t_tsm_PrintPreview
             // 
             this.t_tsm_PrintPreview.Name = "t_tsm_PrintPreview";
-            this.t_tsm_PrintPreview.Size = new System.Drawing.Size(124, 22);
+            this.t_tsm_PrintPreview.Size = new System.Drawing.Size(152, 22);
             this.t_tsm_PrintPreview.Text = "打印预览";
             this.t_tsm_PrintPreview.Click += new System.EventHandler(this.t_tsm_PrintPreview_Click);
             // 
             // t_tsm_PrintConfig
             // 
             this.t_tsm_PrintConfig.Name = "t_tsm_PrintConfig";
-            this.t_tsm_PrintConfig.Size = new System.Drawing.Size(124, 22);
+            this.t_tsm_PrintConfig.Size = new System.Drawing.Size(152, 22);
             this.t_tsm_PrintConfig.Text = "打印配置";
             this.t_tsm_PrintConfig.Click += new System.EventHandler(this.t_tsm_PrintConfig_Click);
             // 
@@ -900,17 +902,6 @@
             this.t_pic_Express.TabIndex = 25;
             this.t_pic_Express.TabStop = false;
             // 
-            // txButton2
-            // 
-            this.txButton2.Image = null;
-            this.txButton2.Location = new System.Drawing.Point(503, 50);
-            this.txButton2.Name = "txButton2";
-            this.txButton2.Size = new System.Drawing.Size(39, 20);
-            this.txButton2.TabIndex = 27;
-            this.txButton2.Text = "查看";
-            this.txButton2.UseVisualStyleBackColor = true;
-            this.txButton2.Click += new System.EventHandler(this.txButton2_Click);
-            // 
             // label24
             // 
             this.label24.AutoSize = true;
@@ -924,7 +915,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1190, 800);
+            this.ClientSize = new System.Drawing.Size(1206, 839);
             this.Controls.Add(this.label24);
             this.Controls.Add(this.t_pic_Express);
             this.Controls.Add(this.t_lbl_Status);
@@ -1009,7 +1000,6 @@
         private System.Windows.Forms.ToolStripMenuItem t_tsm_Copy;
         private System.Windows.Forms.ToolStripMenuItem t_tms_Save;
         private System.Windows.Forms.ToolStripMenuItem t_tsm_Delete;
-        private System.Windows.Forms.ToolStripMenuItem t_tsm_Open;
         private System.Windows.Forms.ToolStripMenuItem t_tsm_Print;
         private TX.Framework.WindowUI.Controls.TXComboBox t_cmg_IsStock;
         private TX.Framework.WindowUI.Controls.TXTextBox t_txt_GoodsSize;

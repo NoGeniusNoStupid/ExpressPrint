@@ -56,6 +56,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "打印预览";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmPreview_FormClosing);
+            this.Load += new System.EventHandler(this.FrmPreview_Load);
             this.ResumeLayout(false);
 
         }

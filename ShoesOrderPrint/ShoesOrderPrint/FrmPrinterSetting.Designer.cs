@@ -30,16 +30,16 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.txGroupBox1 = new TX.Framework.WindowUI.Controls.TXGroupBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.t_num_PrintNum = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
-            this.txComboBox2 = new TX.Framework.WindowUI.Controls.TXComboBox();
+            this.t_cmg_PrintForward = new TX.Framework.WindowUI.Controls.TXComboBox();
             this.t_cmg_PrinterName = new TX.Framework.WindowUI.Controls.TXComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txGroupBox2 = new TX.Framework.WindowUI.Controls.TXGroupBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.txTextBox2 = new TX.Framework.WindowUI.Controls.TXTextBox();
-            this.txTextBox1 = new TX.Framework.WindowUI.Controls.TXTextBox();
+            this.t_txt_LeftAway = new TX.Framework.WindowUI.Controls.TXTextBox();
+            this.t_txt_TopAway = new TX.Framework.WindowUI.Controls.TXTextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txGroupBox3 = new TX.Framework.WindowUI.Controls.TXGroupBox();
@@ -49,20 +49,20 @@
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.txTextBox6 = new TX.Framework.WindowUI.Controls.TXTextBox();
+            this.t_txt_NowWeight = new TX.Framework.WindowUI.Controls.TXTextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.txTextBox4 = new TX.Framework.WindowUI.Controls.TXTextBox();
-            this.txTextBox5 = new TX.Framework.WindowUI.Controls.TXTextBox();
-            this.txTextBox3 = new TX.Framework.WindowUI.Controls.TXTextBox();
+            this.t_txt_NowHeight = new TX.Framework.WindowUI.Controls.TXTextBox();
+            this.t_txt_IniHeight = new TX.Framework.WindowUI.Controls.TXTextBox();
+            this.t_txt_IniWeight = new TX.Framework.WindowUI.Controls.TXTextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.txButton1 = new TX.Framework.WindowUI.Controls.TXButton();
-            this.txButton2 = new TX.Framework.WindowUI.Controls.TXButton();
+            this.t_btn_Save = new TX.Framework.WindowUI.Controls.TXButton();
+            this.t_btn_Cancel = new TX.Framework.WindowUI.Controls.TXButton();
             this.txGroupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.t_num_PrintNum)).BeginInit();
             this.txGroupBox2.SuspendLayout();
             this.txGroupBox3.SuspendLayout();
             this.SuspendLayout();
@@ -82,9 +82,9 @@
             this.txGroupBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(168)))), ((int)(((byte)(192)))));
             this.txGroupBox1.CaptionColor = System.Drawing.Color.Black;
             this.txGroupBox1.CaptionFont = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold);
-            this.txGroupBox1.Controls.Add(this.numericUpDown1);
+            this.txGroupBox1.Controls.Add(this.t_num_PrintNum);
             this.txGroupBox1.Controls.Add(this.label3);
-            this.txGroupBox1.Controls.Add(this.txComboBox2);
+            this.txGroupBox1.Controls.Add(this.t_cmg_PrintForward);
             this.txGroupBox1.Controls.Add(this.t_cmg_PrinterName);
             this.txGroupBox1.Controls.Add(this.label2);
             this.txGroupBox1.Controls.Add(this.label1);
@@ -96,13 +96,13 @@
             this.txGroupBox1.Text = "打印机";
             this.txGroupBox1.TextMargin = 6;
             // 
-            // numericUpDown1
+            // t_num_PrintNum
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(109, 70);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(144, 21);
-            this.numericUpDown1.TabIndex = 5;
-            this.numericUpDown1.Value = new decimal(new int[] {
+            this.t_num_PrintNum.Location = new System.Drawing.Point(109, 70);
+            this.t_num_PrintNum.Name = "t_num_PrintNum";
+            this.t_num_PrintNum.Size = new System.Drawing.Size(144, 21);
+            this.t_num_PrintNum.TabIndex = 3;
+            this.t_num_PrintNum.Value = new decimal(new int[] {
             1,
             0,
             0,
@@ -117,17 +117,17 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "打印份数";
             // 
-            // txComboBox2
+            // t_cmg_PrintForward
             // 
-            this.txComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.txComboBox2.FormattingEnabled = true;
-            this.txComboBox2.Items.AddRange(new object[] {
+            this.t_cmg_PrintForward.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.t_cmg_PrintForward.FormattingEnabled = true;
+            this.t_cmg_PrintForward.Items.AddRange(new object[] {
             "纵向",
             "横向"});
-            this.txComboBox2.Location = new System.Drawing.Point(109, 44);
-            this.txComboBox2.Name = "txComboBox2";
-            this.txComboBox2.Size = new System.Drawing.Size(144, 20);
-            this.txComboBox2.TabIndex = 3;
+            this.t_cmg_PrintForward.Location = new System.Drawing.Point(109, 44);
+            this.t_cmg_PrintForward.Name = "t_cmg_PrintForward";
+            this.t_cmg_PrintForward.Size = new System.Drawing.Size(144, 20);
+            this.t_cmg_PrintForward.TabIndex = 2;
             // 
             // t_cmg_PrinterName
             // 
@@ -136,7 +136,7 @@
             this.t_cmg_PrinterName.Location = new System.Drawing.Point(109, 16);
             this.t_cmg_PrinterName.Name = "t_cmg_PrinterName";
             this.t_cmg_PrinterName.Size = new System.Drawing.Size(144, 20);
-            this.t_cmg_PrinterName.TabIndex = 2;
+            this.t_cmg_PrinterName.TabIndex = 1;
             // 
             // label2
             // 
@@ -155,8 +155,8 @@
             this.txGroupBox2.CaptionFont = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold);
             this.txGroupBox2.Controls.Add(this.label7);
             this.txGroupBox2.Controls.Add(this.label6);
-            this.txGroupBox2.Controls.Add(this.txTextBox2);
-            this.txGroupBox2.Controls.Add(this.txTextBox1);
+            this.txGroupBox2.Controls.Add(this.t_txt_LeftAway);
+            this.txGroupBox2.Controls.Add(this.t_txt_TopAway);
             this.txGroupBox2.Controls.Add(this.label5);
             this.txGroupBox2.Controls.Add(this.label4);
             this.txGroupBox2.Location = new System.Drawing.Point(6, 136);
@@ -185,41 +185,43 @@
             this.label6.TabIndex = 9;
             this.label6.Text = "毫米";
             // 
-            // txTextBox2
+            // t_txt_LeftAway
             // 
-            this.txTextBox2.BackColor = System.Drawing.Color.Transparent;
-            this.txTextBox2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(168)))), ((int)(((byte)(192)))));
-            this.txTextBox2.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txTextBox2.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txTextBox2.HeightLightBolorColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(67)))), ((int)(((byte)(165)))), ((int)(((byte)(220)))));
-            this.txTextBox2.Image = null;
-            this.txTextBox2.ImageSize = new System.Drawing.Size(0, 0);
-            this.txTextBox2.Location = new System.Drawing.Point(73, 70);
-            this.txTextBox2.Name = "txTextBox2";
-            this.txTextBox2.Padding = new System.Windows.Forms.Padding(2);
-            this.txTextBox2.PasswordChar = '\0';
-            this.txTextBox2.Required = false;
-            this.txTextBox2.Size = new System.Drawing.Size(80, 22);
-            this.txTextBox2.TabIndex = 8;
-            this.txTextBox2.Text = "0";
+            this.t_txt_LeftAway.BackColor = System.Drawing.Color.Transparent;
+            this.t_txt_LeftAway.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(168)))), ((int)(((byte)(192)))));
+            this.t_txt_LeftAway.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.t_txt_LeftAway.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.t_txt_LeftAway.HeightLightBolorColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(67)))), ((int)(((byte)(165)))), ((int)(((byte)(220)))));
+            this.t_txt_LeftAway.Image = null;
+            this.t_txt_LeftAway.ImageSize = new System.Drawing.Size(0, 0);
+            this.t_txt_LeftAway.Location = new System.Drawing.Point(73, 70);
+            this.t_txt_LeftAway.Name = "t_txt_LeftAway";
+            this.t_txt_LeftAway.Padding = new System.Windows.Forms.Padding(2);
+            this.t_txt_LeftAway.PasswordChar = '\0';
+            this.t_txt_LeftAway.Required = false;
+            this.t_txt_LeftAway.Size = new System.Drawing.Size(80, 22);
+            this.t_txt_LeftAway.TabIndex = 2;
+            this.t_txt_LeftAway.Text = "0";
+            this.t_txt_LeftAway.Leave += new System.EventHandler(this.t_txt_TopAway_Leave);
             // 
-            // txTextBox1
+            // t_txt_TopAway
             // 
-            this.txTextBox1.BackColor = System.Drawing.Color.Transparent;
-            this.txTextBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(168)))), ((int)(((byte)(192)))));
-            this.txTextBox1.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txTextBox1.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txTextBox1.HeightLightBolorColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(67)))), ((int)(((byte)(165)))), ((int)(((byte)(220)))));
-            this.txTextBox1.Image = null;
-            this.txTextBox1.ImageSize = new System.Drawing.Size(0, 0);
-            this.txTextBox1.Location = new System.Drawing.Point(73, 28);
-            this.txTextBox1.Name = "txTextBox1";
-            this.txTextBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.txTextBox1.PasswordChar = '\0';
-            this.txTextBox1.Required = false;
-            this.txTextBox1.Size = new System.Drawing.Size(80, 22);
-            this.txTextBox1.TabIndex = 7;
-            this.txTextBox1.Text = "0";
+            this.t_txt_TopAway.BackColor = System.Drawing.Color.Transparent;
+            this.t_txt_TopAway.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(168)))), ((int)(((byte)(192)))));
+            this.t_txt_TopAway.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.t_txt_TopAway.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.t_txt_TopAway.HeightLightBolorColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(67)))), ((int)(((byte)(165)))), ((int)(((byte)(220)))));
+            this.t_txt_TopAway.Image = null;
+            this.t_txt_TopAway.ImageSize = new System.Drawing.Size(0, 0);
+            this.t_txt_TopAway.Location = new System.Drawing.Point(73, 28);
+            this.t_txt_TopAway.Name = "t_txt_TopAway";
+            this.t_txt_TopAway.Padding = new System.Windows.Forms.Padding(2);
+            this.t_txt_TopAway.PasswordChar = '\0';
+            this.t_txt_TopAway.Required = false;
+            this.t_txt_TopAway.Size = new System.Drawing.Size(80, 22);
+            this.t_txt_TopAway.TabIndex = 1;
+            this.t_txt_TopAway.Text = "0";
+            this.t_txt_TopAway.Leave += new System.EventHandler(this.t_txt_TopAway_Leave);
             // 
             // label5
             // 
@@ -251,12 +253,12 @@
             this.txGroupBox3.Controls.Add(this.label16);
             this.txGroupBox3.Controls.Add(this.label15);
             this.txGroupBox3.Controls.Add(this.label14);
-            this.txGroupBox3.Controls.Add(this.txTextBox6);
+            this.txGroupBox3.Controls.Add(this.t_txt_NowWeight);
             this.txGroupBox3.Controls.Add(this.label12);
             this.txGroupBox3.Controls.Add(this.label13);
-            this.txGroupBox3.Controls.Add(this.txTextBox4);
-            this.txGroupBox3.Controls.Add(this.txTextBox5);
-            this.txGroupBox3.Controls.Add(this.txTextBox3);
+            this.txGroupBox3.Controls.Add(this.t_txt_NowHeight);
+            this.txGroupBox3.Controls.Add(this.t_txt_IniHeight);
+            this.txGroupBox3.Controls.Add(this.t_txt_IniWeight);
             this.txGroupBox3.Controls.Add(this.label11);
             this.txGroupBox3.Controls.Add(this.label10);
             this.txGroupBox3.Controls.Add(this.label9);
@@ -326,23 +328,24 @@
             this.label14.TabIndex = 18;
             this.label14.Text = "宽度";
             // 
-            // txTextBox6
+            // t_txt_NowWeight
             // 
-            this.txTextBox6.BackColor = System.Drawing.Color.Transparent;
-            this.txTextBox6.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(168)))), ((int)(((byte)(192)))));
-            this.txTextBox6.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txTextBox6.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txTextBox6.HeightLightBolorColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(67)))), ((int)(((byte)(165)))), ((int)(((byte)(220)))));
-            this.txTextBox6.Image = null;
-            this.txTextBox6.ImageSize = new System.Drawing.Size(0, 0);
-            this.txTextBox6.Location = new System.Drawing.Point(129, 65);
-            this.txTextBox6.Name = "txTextBox6";
-            this.txTextBox6.Padding = new System.Windows.Forms.Padding(2);
-            this.txTextBox6.PasswordChar = '\0';
-            this.txTextBox6.Required = false;
-            this.txTextBox6.Size = new System.Drawing.Size(80, 22);
-            this.txTextBox6.TabIndex = 17;
-            this.txTextBox6.Text = "0";
+            this.t_txt_NowWeight.BackColor = System.Drawing.Color.Transparent;
+            this.t_txt_NowWeight.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(168)))), ((int)(((byte)(192)))));
+            this.t_txt_NowWeight.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.t_txt_NowWeight.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.t_txt_NowWeight.HeightLightBolorColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(67)))), ((int)(((byte)(165)))), ((int)(((byte)(220)))));
+            this.t_txt_NowWeight.Image = null;
+            this.t_txt_NowWeight.ImageSize = new System.Drawing.Size(0, 0);
+            this.t_txt_NowWeight.Location = new System.Drawing.Point(129, 65);
+            this.t_txt_NowWeight.Name = "t_txt_NowWeight";
+            this.t_txt_NowWeight.Padding = new System.Windows.Forms.Padding(2);
+            this.t_txt_NowWeight.PasswordChar = '\0';
+            this.t_txt_NowWeight.Required = false;
+            this.t_txt_NowWeight.Size = new System.Drawing.Size(80, 22);
+            this.t_txt_NowWeight.TabIndex = 3;
+            this.t_txt_NowWeight.Text = "0";
+            this.t_txt_NowWeight.Leave += new System.EventHandler(this.t_txt_TopAway_Leave);
             // 
             // label12
             // 
@@ -362,57 +365,62 @@
             this.label13.TabIndex = 15;
             this.label13.Text = "毫米";
             // 
-            // txTextBox4
+            // t_txt_NowHeight
             // 
-            this.txTextBox4.BackColor = System.Drawing.Color.Transparent;
-            this.txTextBox4.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(168)))), ((int)(((byte)(192)))));
-            this.txTextBox4.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txTextBox4.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txTextBox4.HeightLightBolorColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(67)))), ((int)(((byte)(165)))), ((int)(((byte)(220)))));
-            this.txTextBox4.Image = null;
-            this.txTextBox4.ImageSize = new System.Drawing.Size(0, 0);
-            this.txTextBox4.Location = new System.Drawing.Point(332, 67);
-            this.txTextBox4.Name = "txTextBox4";
-            this.txTextBox4.Padding = new System.Windows.Forms.Padding(2);
-            this.txTextBox4.PasswordChar = '\0';
-            this.txTextBox4.Required = false;
-            this.txTextBox4.Size = new System.Drawing.Size(80, 22);
-            this.txTextBox4.TabIndex = 14;
-            this.txTextBox4.Text = "0";
+            this.t_txt_NowHeight.BackColor = System.Drawing.Color.Transparent;
+            this.t_txt_NowHeight.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(168)))), ((int)(((byte)(192)))));
+            this.t_txt_NowHeight.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.t_txt_NowHeight.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.t_txt_NowHeight.HeightLightBolorColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(67)))), ((int)(((byte)(165)))), ((int)(((byte)(220)))));
+            this.t_txt_NowHeight.Image = null;
+            this.t_txt_NowHeight.ImageSize = new System.Drawing.Size(0, 0);
+            this.t_txt_NowHeight.Location = new System.Drawing.Point(332, 67);
+            this.t_txt_NowHeight.Name = "t_txt_NowHeight";
+            this.t_txt_NowHeight.Padding = new System.Windows.Forms.Padding(2);
+            this.t_txt_NowHeight.PasswordChar = '\0';
+            this.t_txt_NowHeight.Required = false;
+            this.t_txt_NowHeight.Size = new System.Drawing.Size(80, 22);
+            this.t_txt_NowHeight.TabIndex = 4;
+            this.t_txt_NowHeight.Text = "0";
+            this.t_txt_NowHeight.Leave += new System.EventHandler(this.t_txt_TopAway_Leave);
             // 
-            // txTextBox5
+            // t_txt_IniHeight
             // 
-            this.txTextBox5.BackColor = System.Drawing.Color.Transparent;
-            this.txTextBox5.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(168)))), ((int)(((byte)(192)))));
-            this.txTextBox5.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txTextBox5.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txTextBox5.HeightLightBolorColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(67)))), ((int)(((byte)(165)))), ((int)(((byte)(220)))));
-            this.txTextBox5.Image = null;
-            this.txTextBox5.ImageSize = new System.Drawing.Size(0, 0);
-            this.txTextBox5.Location = new System.Drawing.Point(332, 25);
-            this.txTextBox5.Name = "txTextBox5";
-            this.txTextBox5.Padding = new System.Windows.Forms.Padding(2);
-            this.txTextBox5.PasswordChar = '\0';
-            this.txTextBox5.Required = false;
-            this.txTextBox5.Size = new System.Drawing.Size(80, 22);
-            this.txTextBox5.TabIndex = 13;
+            this.t_txt_IniHeight.BackColor = System.Drawing.Color.Transparent;
+            this.t_txt_IniHeight.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(168)))), ((int)(((byte)(192)))));
+            this.t_txt_IniHeight.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.t_txt_IniHeight.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.t_txt_IniHeight.HeightLightBolorColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(67)))), ((int)(((byte)(165)))), ((int)(((byte)(220)))));
+            this.t_txt_IniHeight.Image = null;
+            this.t_txt_IniHeight.ImageSize = new System.Drawing.Size(0, 0);
+            this.t_txt_IniHeight.Location = new System.Drawing.Point(332, 25);
+            this.t_txt_IniHeight.Name = "t_txt_IniHeight";
+            this.t_txt_IniHeight.Padding = new System.Windows.Forms.Padding(2);
+            this.t_txt_IniHeight.PasswordChar = '\0';
+            this.t_txt_IniHeight.ReadOnly = true;
+            this.t_txt_IniHeight.Required = false;
+            this.t_txt_IniHeight.Size = new System.Drawing.Size(80, 22);
+            this.t_txt_IniHeight.TabIndex = 2;
+            this.t_txt_IniHeight.Text = "0";
             // 
-            // txTextBox3
+            // t_txt_IniWeight
             // 
-            this.txTextBox3.BackColor = System.Drawing.Color.Transparent;
-            this.txTextBox3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(168)))), ((int)(((byte)(192)))));
-            this.txTextBox3.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txTextBox3.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txTextBox3.HeightLightBolorColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(67)))), ((int)(((byte)(165)))), ((int)(((byte)(220)))));
-            this.txTextBox3.Image = null;
-            this.txTextBox3.ImageSize = new System.Drawing.Size(0, 0);
-            this.txTextBox3.Location = new System.Drawing.Point(129, 28);
-            this.txTextBox3.Name = "txTextBox3";
-            this.txTextBox3.Padding = new System.Windows.Forms.Padding(2);
-            this.txTextBox3.PasswordChar = '\0';
-            this.txTextBox3.Required = false;
-            this.txTextBox3.Size = new System.Drawing.Size(80, 22);
-            this.txTextBox3.TabIndex = 12;
+            this.t_txt_IniWeight.BackColor = System.Drawing.Color.Transparent;
+            this.t_txt_IniWeight.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(168)))), ((int)(((byte)(192)))));
+            this.t_txt_IniWeight.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.t_txt_IniWeight.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.t_txt_IniWeight.HeightLightBolorColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(67)))), ((int)(((byte)(165)))), ((int)(((byte)(220)))));
+            this.t_txt_IniWeight.Image = null;
+            this.t_txt_IniWeight.ImageSize = new System.Drawing.Size(0, 0);
+            this.t_txt_IniWeight.Location = new System.Drawing.Point(129, 28);
+            this.t_txt_IniWeight.Name = "t_txt_IniWeight";
+            this.t_txt_IniWeight.Padding = new System.Windows.Forms.Padding(2);
+            this.t_txt_IniWeight.PasswordChar = '\0';
+            this.t_txt_IniWeight.ReadOnly = true;
+            this.t_txt_IniWeight.Required = false;
+            this.t_txt_IniWeight.Size = new System.Drawing.Size(80, 22);
+            this.t_txt_IniWeight.TabIndex = 1;
+            this.t_txt_IniWeight.Text = "0";
             // 
             // label11
             // 
@@ -450,33 +458,35 @@
             this.label8.TabIndex = 6;
             this.label8.Text = "原始大小";
             // 
-            // txButton1
+            // t_btn_Save
             // 
-            this.txButton1.Image = null;
-            this.txButton1.Location = new System.Drawing.Point(472, 298);
-            this.txButton1.Name = "txButton1";
-            this.txButton1.Size = new System.Drawing.Size(100, 28);
-            this.txButton1.TabIndex = 4;
-            this.txButton1.Text = "保存";
-            this.txButton1.UseVisualStyleBackColor = true;
+            this.t_btn_Save.Image = null;
+            this.t_btn_Save.Location = new System.Drawing.Point(472, 298);
+            this.t_btn_Save.Name = "t_btn_Save";
+            this.t_btn_Save.Size = new System.Drawing.Size(100, 28);
+            this.t_btn_Save.TabIndex = 4;
+            this.t_btn_Save.Text = "确定";
+            this.t_btn_Save.UseVisualStyleBackColor = true;
+            this.t_btn_Save.Click += new System.EventHandler(this.t_btn_Save_Click);
             // 
-            // txButton2
+            // t_btn_Cancel
             // 
-            this.txButton2.Image = null;
-            this.txButton2.Location = new System.Drawing.Point(578, 298);
-            this.txButton2.Name = "txButton2";
-            this.txButton2.Size = new System.Drawing.Size(100, 28);
-            this.txButton2.TabIndex = 5;
-            this.txButton2.Text = "取消";
-            this.txButton2.UseVisualStyleBackColor = true;
+            this.t_btn_Cancel.Image = null;
+            this.t_btn_Cancel.Location = new System.Drawing.Point(578, 298);
+            this.t_btn_Cancel.Name = "t_btn_Cancel";
+            this.t_btn_Cancel.Size = new System.Drawing.Size(100, 28);
+            this.t_btn_Cancel.TabIndex = 5;
+            this.t_btn_Cancel.Text = "取消";
+            this.t_btn_Cancel.UseVisualStyleBackColor = true;
+            this.t_btn_Cancel.Click += new System.EventHandler(this.t_btn_Cancel_Click);
             // 
             // FrmPrinterSetting
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(688, 332);
-            this.Controls.Add(this.txButton2);
-            this.Controls.Add(this.txButton1);
+            this.Controls.Add(this.t_btn_Cancel);
+            this.Controls.Add(this.t_btn_Save);
             this.Controls.Add(this.txGroupBox3);
             this.Controls.Add(this.txGroupBox2);
             this.Controls.Add(this.txGroupBox1);
@@ -487,7 +497,7 @@
             this.Load += new System.EventHandler(this.FrmPrinterSetting_Load);
             this.txGroupBox1.ResumeLayout(false);
             this.txGroupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.t_num_PrintNum)).EndInit();
             this.txGroupBox2.ResumeLayout(false);
             this.txGroupBox2.PerformLayout();
             this.txGroupBox3.ResumeLayout(false);
@@ -500,17 +510,17 @@
 
         private System.Windows.Forms.Label label1;
         private TX.Framework.WindowUI.Controls.TXGroupBox txGroupBox1;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown t_num_PrintNum;
         private System.Windows.Forms.Label label3;
-        private TX.Framework.WindowUI.Controls.TXComboBox txComboBox2;
+        private TX.Framework.WindowUI.Controls.TXComboBox t_cmg_PrintForward;
         private TX.Framework.WindowUI.Controls.TXComboBox t_cmg_PrinterName;
         private System.Windows.Forms.Label label2;
         private TX.Framework.WindowUI.Controls.TXGroupBox txGroupBox2;
         private TX.Framework.WindowUI.Controls.TXGroupBox txGroupBox3;
-        private TX.Framework.WindowUI.Controls.TXButton txButton1;
-        private TX.Framework.WindowUI.Controls.TXButton txButton2;
-        private TX.Framework.WindowUI.Controls.TXTextBox txTextBox2;
-        private TX.Framework.WindowUI.Controls.TXTextBox txTextBox1;
+        private TX.Framework.WindowUI.Controls.TXButton t_btn_Save;
+        private TX.Framework.WindowUI.Controls.TXButton t_btn_Cancel;
+        private TX.Framework.WindowUI.Controls.TXTextBox t_txt_LeftAway;
+        private TX.Framework.WindowUI.Controls.TXTextBox t_txt_TopAway;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label7;
@@ -519,12 +529,12 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
-        private TX.Framework.WindowUI.Controls.TXTextBox txTextBox6;
+        private TX.Framework.WindowUI.Controls.TXTextBox t_txt_NowWeight;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
-        private TX.Framework.WindowUI.Controls.TXTextBox txTextBox4;
-        private TX.Framework.WindowUI.Controls.TXTextBox txTextBox5;
-        private TX.Framework.WindowUI.Controls.TXTextBox txTextBox3;
+        private TX.Framework.WindowUI.Controls.TXTextBox t_txt_NowHeight;
+        private TX.Framework.WindowUI.Controls.TXTextBox t_txt_IniHeight;
+        private TX.Framework.WindowUI.Controls.TXTextBox t_txt_IniWeight;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;

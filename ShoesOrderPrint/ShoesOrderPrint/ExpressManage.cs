@@ -202,30 +202,20 @@ namespace ShoesOrderPrint
                 }
                 if (t_dgv_Data.SelectedRows == null)
                     return;
+                //获得选中集合
                 DataGridViewSelectedRowCollection myRows = t_dgv_Data.SelectedRows;
                 if (myRows == null || myRows.Count<=0)
                     return;
-                //批量打印
-                string printFailure = string.Empty;
-                int printFaliureCount=0;
+                //打印集合
+                List<MExpress> mExpressList = new List<MExpress>();
                 foreach (DataGridViewRow item in myRows)
                 {
                     MExpress myExpress = item.DataBoundItem as MExpress;
-                    if (string.IsNullOrEmpty(myExpress.ExpreeType))
-                    {
-                        printFailure += myExpress.ExpressNo+",";
-                        printFaliureCount+=1;
-                        continue;
-                    }
-                    m_CommonBLL.Print(myExpress.ExpreeType, myExpress);
+                    mExpressList.Add(myExpress);
                 }
-                if (printFaliureCount!=0)
-                {
-                    printFailure = printFailure.TrimEnd(',');
-                    this.Info(string.Format(@"打印成功！共{0}单，失败{1}单！原因：未选择快递类型！
-                    分别为：{2}", myRows.Count, printFaliureCount, printFailure));
-                }
-                this.Info(string.Format("打印成功！共{0}单！", myRows.Count));    
+                //批量打印
+                m_CommonBLL.MorePrint(mExpressList);                
+                this.Info(string.Format("打印成功！共{0}单！", mExpressList.Count));
                 //刷新
                 t_txt_Search_Click(null, null);
             }

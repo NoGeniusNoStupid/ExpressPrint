@@ -36,13 +36,14 @@
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.t_dgv_Data)).BeginInit();
             this.SuspendLayout();
             // 
             // t_btn_Save
             // 
             this.t_btn_Save.Image = null;
-            this.t_btn_Save.Location = new System.Drawing.Point(525, 433);
+            this.t_btn_Save.Location = new System.Drawing.Point(618, 433);
             this.t_btn_Save.Name = "t_btn_Save";
             this.t_btn_Save.Size = new System.Drawing.Size(100, 28);
             this.t_btn_Save.TabIndex = 0;
@@ -53,7 +54,7 @@
             // t_btn_Cancel
             // 
             this.t_btn_Cancel.Image = null;
-            this.t_btn_Cancel.Location = new System.Drawing.Point(631, 433);
+            this.t_btn_Cancel.Location = new System.Drawing.Point(724, 433);
             this.t_btn_Cancel.Name = "t_btn_Cancel";
             this.t_btn_Cancel.Size = new System.Drawing.Size(100, 28);
             this.t_btn_Cancel.TabIndex = 1;
@@ -69,11 +70,12 @@
             this.Column2,
             this.Column3,
             this.Column4,
-            this.Column5});
+            this.Column5,
+            this.Column6});
             this.t_dgv_Data.Location = new System.Drawing.Point(6, 43);
             this.t_dgv_Data.Name = "t_dgv_Data";
             this.t_dgv_Data.RowTemplate.Height = 23;
-            this.t_dgv_Data.Size = new System.Drawing.Size(725, 372);
+            this.t_dgv_Data.Size = new System.Drawing.Size(824, 372);
             this.t_dgv_Data.TabIndex = 2;
             this.t_dgv_Data.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.t_dgv_Data_DataError);
             // 
@@ -116,11 +118,17 @@
             this.Column5.Name = "Column5";
             this.Column5.Width = 120;
             // 
+            // Column6
+            // 
+            this.Column6.DataPropertyName = "MaxNum";
+            this.Column6.HeaderText = "目前记录数";
+            this.Column6.Name = "Column6";
+            // 
             // FrmExpressNumConfig
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(736, 467);
+            this.ClientSize = new System.Drawing.Size(837, 467);
             this.Controls.Add(this.t_dgv_Data);
             this.Controls.Add(this.t_btn_Cancel);
             this.Controls.Add(this.t_btn_Save);
@@ -144,5 +152,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
     }
 }

@@ -88,7 +88,7 @@ namespace ShoesOrderPrint.BLL
         }
         #endregion
 
-       #region 获取快递流水号
+        #region 获取快递流水号
         public string GetExpressNo(string expressName)
         {
             string expressNo = string.Empty;
@@ -104,10 +104,18 @@ namespace ShoesOrderPrint.BLL
             }
             else
             {
-                expressNo = mExpressNum.ExpressBeforeNum + mExpressNum.MaxNum.ToString().PadLeft(mExpressNum.SerialNum, '0');
+                expressNo = mExpressNum.ExpressBeforeNum + (mExpressNum.ExpressStartNum+mExpressNum.MaxNum).ToString().PadLeft(mExpressNum.SerialNum, '0');
             }
             return expressNo;
         }
+       #endregion
+
+        #region 更新流水号
+        public void UpdateMaxNum(string expreeType)
+        {
+            string updateSql = string.Format(@"update T_ExpressNum set MaxNum=MaxNum+1 where ExpressName='{0}'", expreeType);
+            _dao.ExecuteNonQuery(updateSql);
+        }     
        #endregion
    }
 }

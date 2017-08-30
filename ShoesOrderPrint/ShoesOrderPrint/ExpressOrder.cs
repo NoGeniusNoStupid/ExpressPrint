@@ -188,15 +188,23 @@ namespace ShoesOrderPrint
             //自动生成快递单号          
             string mExpressNo = m_ExpressItemConfigBLL.GetExpressNo(m_Express.ExpreeType);
             if (!string.IsNullOrEmpty(mExpressNo))
+            {
                 m_Express.ExpressNo = mExpressNo;
+                t_txt_ExpressNum.Text = mExpressNo;
+            }
 
             if (string.IsNullOrEmpty(m_Express.ExpressNo))
             {
                 this.Warning("请输入快递单号");
-                return false ;
+                return false;
             }
             return isPass;
         }
+        //更新流水号
+        private void UpdateMaxNum(string expreeType)
+        {
+            m_ExpressItemConfigBLL.UpdateMaxNum(expreeType);
+        }     
         #endregion
 
         #region 事件
@@ -375,10 +383,21 @@ namespace ShoesOrderPrint
                    
                     if (!BeforeSave(m_Express))
                         return;
+                    //校验是否已经存在
+                    MExpress mExpress = mExpressBLL.QueryModel(string.Format("where Express_No='{0}'", m_Express.ExpressNo));
+                    if (mExpress != null)
+                    {
+
+                       DialogResult result = this.Question("该快递单号已存在，是否继续保存！");
+                       if (result != DialogResult.OK)
+                           return;
+                    }
                     m_Express.Status = "已保存";
                     //插入
                     int affectRecrd = mExpressBLL.Insert(m_Express);                    
                     SaveAfter(affectRecrd);
+                    //更新流水号
+                    UpdateMaxNum(m_Express.ExpreeType);
                 }
                 else
                 {
@@ -396,7 +415,8 @@ namespace ShoesOrderPrint
                 this.Warning(ex.Message); 
             }
           
-        }     
+        }
+     
         /// <summary>
         /// 删除
         /// </summary>
@@ -494,17 +514,13 @@ namespace ShoesOrderPrint
         private void t_tsm_PrintExpress_Click(object sender, EventArgs e)
         {
             try
-            {
-                if (t_cmg_ExpressType.SelectedIndex == -1)
-                 {
-                     this.Info("请先选择快递类型！");
-                     return;
-                 }
+            {                
                 if (m_Express.Status == "新建")
                 {
                     this.Info("当前快递单还未保存，请保存后再操作！");
+                    return;
                 }
-                mCommonBLL.Print(t_cmg_ExpressType.Text, m_Express);
+                mCommonBLL.OnePrint(m_Express);
                 
             }
             catch (Exception ex)
@@ -514,7 +530,6 @@ namespace ShoesOrderPrint
             }
         }
         #endregion
-
         //查看按钮
         private void txButton2_Click(object sender, EventArgs e)
         {
@@ -552,12 +567,12 @@ namespace ShoesOrderPrint
                 this.Warning(ex.Message);
             }
         }
-
         //快递类型选择变更
         private void t_cmg_ExpressType_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
+       
         #endregion
 
     }
