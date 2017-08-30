@@ -124,3 +124,5 @@ D:\DevelopMent\ExpressPrint\ShoesOrderPrint\ShoesOrderPrint\bin\Debug\ShoesOrder
 D:\DevelopMent\ExpressPrint\ShoesOrderPrint\ShoesOrderPrint\obj\Debug\ShoesOrderPrint.exe
 D:\DevelopMent\ExpressPrint\ShoesOrderPrint\ShoesOrderPrint\obj\Debug\ShoesOrderPrint.pdb
 E:\ExpressPrint\ShoesOrderPrint\ShoesOrderPrint\obj\Debug\ShoesOrderPrint.FrmExpressNumConfig.resources
+E:\ExpressPrint\ShoesOrderPrint\ShoesOrderPrint\bin\Debug\HJ.SQLiteBackup.dll
+E:\ExpressPrint\ShoesOrderPrint\ShoesOrderPrint\bin\Debug\BuckUp\备份说明.txt

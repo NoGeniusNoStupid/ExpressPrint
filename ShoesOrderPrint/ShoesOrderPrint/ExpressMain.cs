@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HJ.SQLiteBackup;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -69,7 +70,23 @@ namespace ShoesOrderPrint
         //数据备份
         private void t_btn_DataBackup_Click(object sender, EventArgs e)
         {
-            this.Info("暂未开放！后期实现");
+            try
+            {
+                string path = System.AppDomain.CurrentDomain.BaseDirectory;
+                BackUpModel model = new BackUpModel();
+                model.destDBFileName = path + @"DataBase\SHOEDB.db";
+                model.backupDBFileName = path + string.Format(@"BuckUp\SHOEDB_{0}.db",DateTime.Now.ToShortDateString());
+                BackUpDateBase myBackUpDateBase = new BackUpDateBase();
+                myBackUpDateBase.Initializae(model);
+                myBackUpDateBase.BackupDB();
+                this.Info("备份成功！");
+            }
+            catch (Exception ex)
+            {
+
+                this.Warning(ex.Message);
+            }
+           
         }
         //打印机配置
         private void t_btn_Printer_Click(object sender, EventArgs e)

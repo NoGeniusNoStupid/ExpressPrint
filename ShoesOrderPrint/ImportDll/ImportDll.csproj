@@ -43,6 +43,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="HJ.SQLiteBackup.dll" />
     <Content Include="SQLite.Interop.dll" />
     <Content Include="System.Data.SQLite.dll" />
     <Content Include="TX.Framework.dll" />

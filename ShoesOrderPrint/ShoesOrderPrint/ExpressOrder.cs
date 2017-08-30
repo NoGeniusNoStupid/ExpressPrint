@@ -372,11 +372,12 @@ namespace ShoesOrderPrint
                 //保存               
                 if (m_Express.Status == "新建")//状态
                 {
-                    m_Express.Status = "已保存";
+                   
                     if (!BeforeSave(m_Express))
                         return;
+                    m_Express.Status = "已保存";
                     //插入
-                    int affectRecrd = mExpressBLL.Insert(m_Express);
+                    int affectRecrd = mExpressBLL.Insert(m_Express);                    
                     SaveAfter(affectRecrd);
                 }
                 else
