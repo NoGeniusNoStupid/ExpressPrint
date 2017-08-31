@@ -189,31 +189,38 @@ namespace ShoesOrderPrint
             if (m_List == null)
                 return;
            
-            //设置打印用的纸张 当设置为Custom的时候，可以自定义纸张的大小，还可以选择A4,A5等常用纸型
+           
             PrintDocument mPrintDocument = new PrintDocument();
-            mPrintDocument.PrinterSettings.PrinterName = m_MPrinter.Printer;            
+            //设置打印机
+            mPrintDocument.PrinterSettings.PrinterName = m_MPrinter.Printer;
+            //设置打印份数
+            mPrintDocument.PrinterSettings.Copies = Convert.ToInt16(m_MPrinter.PrintNum);
+            //设置打印用的纸张 当设置为Custom的时候，可以自定义纸张的大小，还可以选择A4,A5等常用纸型
             if (m_MPrinter.NowHeight != 0 && m_MPrinter.NowWeight!=0)
                 mPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("Custum", Convert.ToInt32(m_MPrinter.NowWeight) / 10, Convert.ToInt32(m_MPrinter.NowHeight) / 10);   
             else
                 mPrintDocument.DefaultPageSettings.PaperSize = new PaperSize("Custum", Convert.ToInt32(m_MPrinter.IniWeight) / 10, Convert.ToInt32(m_MPrinter.IniHeight) / 10);
+            //设置打印方向
             if (m_MPrinter.PrintFoward == "横向")
                 mPrintDocument.DefaultPageSettings.Landscape = true;
             else
                 mPrintDocument.DefaultPageSettings.Landscape = false;
+            //设置打印偏移量
             int topAway = 0;
             int leftAway = 0;
             if (m_MPrinter.TopAway!=0)
                 topAway=Convert.ToInt32(m_MPrinter.TopAway) / 10;
             if (m_MPrinter.LeftAway != 0)
                 leftAway = Convert.ToInt32(m_MPrinter.LeftAway) / 10;
-            if (topAway > 0)
+            if (topAway >= 0)
                 mPrintDocument.DefaultPageSettings.Margins.Top = topAway;
             else
-                mPrintDocument.DefaultPageSettings.Margins.Bottom = topAway;
-            if (leftAway > 0)
+                mPrintDocument.DefaultPageSettings.Margins.Bottom = topAway * -1;
+            if (leftAway >= 0)
                 mPrintDocument.DefaultPageSettings.Margins.Left = leftAway;
             else
-                mPrintDocument.DefaultPageSettings.Margins.Right = leftAway;
+                mPrintDocument.DefaultPageSettings.Margins.Right = leftAway * -1;
+            //设置打印内容
             mPrintDocument.PrintPage += mPrintDocument_PrintPage;
             mPrintDocument.Print();
 
@@ -238,8 +245,6 @@ namespace ShoesOrderPrint
             }
             return myList;
         }
-
-
         //单个打印
         public void OnePrint(MExpress mExpress)
         {

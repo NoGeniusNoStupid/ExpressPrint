@@ -75,7 +75,9 @@ namespace ShoesOrderPrint
             m_Express.IsPrint = "未打印";
             m_Express.IsStock = "有货";
             m_Express.Status = "新建";
+            m_Express.ExpreeDate = DateTime.Now;
             m_Express.GoodsPic = null;
+            t_dtp_ExpressDate.Value = DateTime.Now;
         }
         /// <summary>
         /// 复制快递单
@@ -90,7 +92,7 @@ namespace ShoesOrderPrint
             m_Express.UUID = Guid.NewGuid().ToString("N");
             m_Express.IsPrint = "未打印";
             m_Express.IsStock = "有货";
-            m_Express.Status = "新建";
+            m_Express.Status = "新建";           
             m_Express.ExpressNo = string.Empty;
             t_txt_ExpressNum.Text = string.Empty;
             t_lbl_Status.Text = "状态：" + m_Express.Status;
@@ -120,7 +122,10 @@ namespace ShoesOrderPrint
         private void LoadPageDate(string primaryId)
         {
             m_Express = mExpressBLL.QuerySingle(primaryId);
-
+            if (m_Express == null)
+                return;
+            if (IsCopy) //刷新时间           
+                m_Express.ExpreeDate = DateTime.Now;          
             t_txt_ExpressNum.Text = m_Express.ExpressNo;
             t_cmg_ExpressType.Text = m_Express.ExpreeType;
             if (m_Express.ExpreeDate!=null)

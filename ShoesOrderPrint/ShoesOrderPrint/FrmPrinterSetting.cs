@@ -152,9 +152,14 @@ namespace ShoesOrderPrint
             m_Printer.TopAway = Convert.ToDecimal(t_txt_TopAway.Text);
             m_Printer.LeftAway = Convert.ToDecimal(t_txt_LeftAway.Text);
             m_Printer.IniWeight = Convert.ToDecimal(t_txt_IniWeight.Text);
-            m_Printer.IniHeight = Convert.ToDecimal(t_txt_IniHeight.Text);
+            m_Printer.IniHeight = Convert.ToDecimal(t_txt_IniHeight.Text);            
             m_Printer.NowWeight = Convert.ToDecimal(t_txt_NowWeight.Text);
             m_Printer.NowHeight = Convert.ToDecimal(t_txt_NowHeight.Text);
+            if (m_Printer.NowWeight < 0 || m_Printer.NowHeight < 0)
+            {
+                this.Warning("修正纸张的宽度和高度不能小于零！");
+                return; 
+            }
             //保存
             m_PrinterBLL.Update(m_Printer);
             result = DialogResult.OK;

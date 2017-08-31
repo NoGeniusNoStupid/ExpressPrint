@@ -104,13 +104,13 @@ namespace ShoesOrderPrint
                 if (txRadioButton3.Checked)
                     DateSql = string.Format(" strftime('%Y.%m',{0})=strftime('%Y.%m','now')", "Expree_Date");//月
                 if (!string.IsNullOrEmpty(expressTyep) && !string.IsNullOrEmpty(expressNo))
-                    expressTyepSql = "and" + expressTyepSql;
+                    expressTyepSql = " and " + expressTyepSql;
                 if (!string.IsNullOrEmpty(DateSql) && (!string.IsNullOrEmpty(expressNo) || !string.IsNullOrEmpty(expressTyep)))
-                    DateSql = "and" + DateSql;
+                    DateSql = " and " + DateSql;
                 string sqlWhere = string.Empty;
                 if (string.IsNullOrEmpty(DateSql) && string.IsNullOrEmpty(expressNo) && string.IsNullOrEmpty(expressTyepSql))
                 {
-                    sqlWhere = "order by Expree_Date";
+                    sqlWhere = " order by Expree_Date";
                 }
                 else
                 {
