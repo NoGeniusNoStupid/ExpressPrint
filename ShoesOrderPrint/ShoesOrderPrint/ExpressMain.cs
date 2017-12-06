@@ -18,7 +18,7 @@ namespace ShoesOrderPrint
         {
             InitializeComponent();
         }
-
+        //打开快递单录入界面
         private void txButton1_Click(object sender, EventArgs e)
         {
             try
@@ -32,7 +32,7 @@ namespace ShoesOrderPrint
                 this.Warning(ex.Message);
             }
         }
-
+        //打开快递单管理界面
         private void txButton2_Click(object sender, EventArgs e)
         {
             try
@@ -47,7 +47,7 @@ namespace ShoesOrderPrint
                 this.Warning(ex.Message);
             }
         }
-
+        //打开打印项配置界面
         private void txButton4_Click(object sender, EventArgs e)
         {
             try
@@ -67,6 +67,14 @@ namespace ShoesOrderPrint
             CommonBLL myCommonBLL = new CommonBLL();
             myCommonBLL.SetCenterScreen(this);
         }
+        
+        //快递单号配置
+        private void t_btn_ExpressNoConfig_Click(object sender, EventArgs e)
+        {
+            FrmExpressNumConfig myForm = new FrmExpressNumConfig();
+            myForm.ShowDialog();
+        }
+
         //数据备份
         private void t_btn_DataBackup_Click(object sender, EventArgs e)
         {
@@ -75,7 +83,7 @@ namespace ShoesOrderPrint
                 string path = System.AppDomain.CurrentDomain.BaseDirectory;
                 BackUpModel model = new BackUpModel();
                 model.destDBFileName = path + @"DataBase\SHOEDB.db";
-                model.backupDBFileName = path + string.Format(@"BuckUp\SHOEDB_{0}.db",DateTime.Now.ToShortDateString());
+                model.backupDBFileName = path + string.Format(@"BuckUp\SHOEDB_{0}.db", DateTime.Now.ToShortDateString());
                 BackUpDateBase myBackUpDateBase = new BackUpDateBase();
                 myBackUpDateBase.Initializae(model);
                 myBackUpDateBase.BackupDB();
@@ -86,19 +94,13 @@ namespace ShoesOrderPrint
 
                 this.Warning(ex.Message);
             }
-           
+
         }
         //打印机配置
         private void t_btn_Printer_Click(object sender, EventArgs e)
         {
             //FrmPrinterSetting myForm = new FrmPrinterSetting();
             //myForm.ShowDialog();
-        }
-        //快递单号配置
-        private void t_btn_ExpressNoConfig_Click(object sender, EventArgs e)
-        {
-            FrmExpressNumConfig myForm = new FrmExpressNumConfig();
-            myForm.ShowDialog();
         }
     }
 }

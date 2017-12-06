@@ -23,13 +23,7 @@ namespace ShoesOrderPrint
         {
             InitializeComponent();
         }
-
-        private void FrmPreview_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            //CommonBLL m_CommonBLL = new CommonBLL();
-            //m_CommonBLL.InitialControl(this.Controls);
-        }
-
+        //保存
         private void txButton1_Click(object sender, EventArgs e)
         {
             m_IsUpdate = true;
@@ -37,12 +31,6 @@ namespace ShoesOrderPrint
             m_CommonBLL.InitialControl(this.Controls);
 
             MessageBox.Show("保存成功");
-        }
-
-        private void FrmPreview_Load(object sender, EventArgs e)
-        {
-           
-
         }
     }
 }

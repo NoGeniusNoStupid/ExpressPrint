@@ -70,7 +70,11 @@ namespace ShoesOrderPrint
             }
                    
         }
-
+        /// <summary>
+        /// 数据输入格式错误，取消操作
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void t_dgv_Data_DataError(object sender, DataGridViewDataErrorEventArgs e)
         {
             try

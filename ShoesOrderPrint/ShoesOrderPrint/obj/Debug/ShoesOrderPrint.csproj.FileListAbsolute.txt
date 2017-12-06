@@ -105,11 +105,6 @@ E:\ExpressPrint\ShoesOrderPrint\ShoesOrderPrint\bin\Debug\SQLite.Interop.dll
 E:\ExpressPrint\ShoesOrderPrint\ShoesOrderPrint\bin\Debug\DataBase\SHOEDB.db
 E:\ExpressPrint\ShoesOrderPrint\ShoesOrderPrint\bin\Debug\ShoesOrderPrint.exe.config
 E:\ExpressPrint\ShoesOrderPrint\ShoesOrderPrint\bin\Debug\HJ.SQLiteBackup.dll
-E:\ExpressPrint\ShoesOrderPrint\ShoesOrderPrint\bin\Debug\Microsoft.Office.Interop.Excel.dll
-E:\ExpressPrint\ShoesOrderPrint\ShoesOrderPrint\bin\Debug\office.dll
-E:\ExpressPrint\ShoesOrderPrint\ShoesOrderPrint\bin\Debug\Microsoft.Vbe.Interop.dll
-E:\ExpressPrint\ShoesOrderPrint\ShoesOrderPrint\bin\Debug\Microsoft.Office.Interop.Excel.xml
-E:\ExpressPrint\ShoesOrderPrint\ShoesOrderPrint\bin\Debug\office.xml
 E:\ExpressPrint\ShoesOrderPrint\ShoesOrderPrint\obj\Debug\ShoesOrderPrint.ExpressMain.resources
 E:\ExpressPrint\ShoesOrderPrint\ShoesOrderPrint\obj\Debug\ShoesOrderPrint.ExpressManage.resources
 E:\ExpressPrint\ShoesOrderPrint\ShoesOrderPrint\obj\Debug\ShoesOrderPrint.ExpressOrder.resources
@@ -124,4 +119,3 @@ E:\ExpressPrint\ShoesOrderPrint\ShoesOrderPrint\obj\Debug\ShoesOrderPrint.csproj
 E:\ExpressPrint\ShoesOrderPrint\ShoesOrderPrint\obj\Debug\ShoesOrderPrint.exe
 E:\ExpressPrint\ShoesOrderPrint\ShoesOrderPrint\obj\Debug\ShoesOrderPrint.pdb
 E:\ExpressPrint\ShoesOrderPrint\ShoesOrderPrint\bin\Debug\ShoesOrderPrint.pdb
-E:\ExpressPrint\ShoesOrderPrint\ShoesOrderPrint\obj\Debug\ShoesOrderPrint.csprojResolveAssemblyReference.cache

@@ -151,8 +151,10 @@ namespace ShoesOrderPrint
             t_cmg_ReceivePro.Text = m_Express.ReceiveProvince;
             t_cmg_ReceiveCity.Text = m_Express.ReceiveCity;
             t_lbl_Status.Text = "状态：" + m_Express.Status;
+            //图片展示
             if (m_Express.GoodsPic != null)
             {
+                //将数据流转换为图片格式
                 System.IO.MemoryStream ms = new System.IO.MemoryStream(m_Express.GoodsPic);
                 System.Drawing.Image img = System.Drawing.Image.FromStream(ms);
                 Bitmap bmp = new Bitmap(img, 162, 91);
@@ -285,7 +287,7 @@ namespace ShoesOrderPrint
         }
 
         /// <summary>
-        /// 表示下拉框选择改变事件
+        /// 表示下拉框选择改变事件（二级城市联动）
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -313,7 +315,7 @@ namespace ShoesOrderPrint
         /// <param name="e"></param>
         private void t_tsm_New_Click(object sender, EventArgs e)
         {
-            NewModel();
+            NewModel();           
             t_txt_ExpressNum.Text = string.Empty;
             t_cmg_ExpressType.Text = string.Empty;
             t_dtp_ExpressDate.Value = DateTime.Now;
@@ -525,6 +527,7 @@ namespace ShoesOrderPrint
                     this.Info("当前快递单还未保存，请保存后再操作！");
                     return;
                 }
+                //调用打印事件
                 mCommonBLL.OnePrint(m_Express);
                 
             }
@@ -535,6 +538,7 @@ namespace ShoesOrderPrint
             }
         }
         #endregion
+
         //查看按钮
         private void txButton2_Click(object sender, EventArgs e)
         {
@@ -546,13 +550,15 @@ namespace ShoesOrderPrint
                     return;
                 }
 
+                //获取图片路径
                 string ImagePath = AppDomain.CurrentDomain.BaseDirectory + @"BackImage\{0}.jpg";
                 ImagePath = string.Format(ImagePath, t_cmg_ExpressType.Text);
+                //图片展示
                 Image backImg = Image.FromFile(ImagePath);
                 Bitmap bmp = new Bitmap(backImg, t_pic_Express.Width, t_pic_Express.Height);
                 t_pic_Express.Image = bmp;
 
-
+                //窗体收缩
                 if (txButton2.Text == "查看")
                 {
                     txButton2.Text = "收缩";
@@ -572,11 +578,7 @@ namespace ShoesOrderPrint
                 this.Warning(ex.Message);
             }
         }
-        //快递类型选择变更
-        private void t_cmg_ExpressType_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
+        
        
         #endregion
 

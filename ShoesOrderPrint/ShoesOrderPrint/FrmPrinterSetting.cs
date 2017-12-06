@@ -20,7 +20,6 @@ namespace ShoesOrderPrint
         /// 表示打印机业务管理类
         /// </summary>
         PrinterBLL m_PrinterBLL = new PrinterBLL();
-
         /// <summary>
         /// 打印机对象
         /// </summary>
@@ -33,6 +32,8 @@ namespace ShoesOrderPrint
         /// 提示信息
         /// </summary>
         ToolTip mToolTip ;
+
+        #region 构造函数
         public FrmPrinterSetting()
         {
             InitializeComponent();
@@ -72,9 +73,10 @@ namespace ShoesOrderPrint
             }
             
         }
+        #endregion
 
         #region 事件
-        
+
         //详细说明
         private void t_btn_Detail_Click(object sender, EventArgs e)
         {
@@ -121,14 +123,10 @@ namespace ShoesOrderPrint
                 this.Warning(ex.Message);
             }
         }
-
-        private void txButton1_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        //取消按钮
         private void t_btn_Cancel_Click(object sender, EventArgs e)
-        {            
+        {   
+            //关闭窗体
             this.Close();
         }
         //确定
@@ -160,16 +158,18 @@ namespace ShoesOrderPrint
                 this.Warning("修正纸张的宽度和高度不能小于零！");
                 return; 
             }
-            //保存
+            //保存记录
             m_PrinterBLL.Update(m_Printer);
             result = DialogResult.OK;
             this.Close();
         }
+        //文本框离开时触发
         private void t_txt_TopAway_Leave(object sender, EventArgs e)
         {
             TXTextBox mTextBox = sender as TXTextBox;
             if (mTextBox == null)
                 return;
+            //判断输入内容是否是数字
             if (!IsNumberic(mTextBox.Text))
             {
                 mTextBox.Focus();
@@ -186,6 +186,7 @@ namespace ShoesOrderPrint
         }
         #endregion
 
+        #region 方法
         /// <summary>
         /// 判断是否是数字
         /// </summary>
@@ -203,7 +204,7 @@ namespace ShoesOrderPrint
                 return false;
             }
         }
+        #endregion
 
-       
     }
 }

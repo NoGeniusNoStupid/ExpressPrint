@@ -161,6 +161,7 @@ namespace ShoesOrderPrint
             {
                 if (t_dgv_Data.CurrentRow == null)
                     return;
+                //获取选中对象
                 MExpress BList = this.t_dgv_Data.CurrentRow.DataBoundItem as MExpress;
                 ExpressOrder myFrom = new ExpressOrder(BList.UUID,true);
                 myFrom.ShowDialog();
@@ -179,6 +180,7 @@ namespace ShoesOrderPrint
             {
                 if (t_dgv_Data.CurrentRow == null)
                     return;
+                //获取选中对象
                 MExpress BList = this.t_dgv_Data.CurrentRow.DataBoundItem as MExpress;
                 ExpressOrder myFrom = new ExpressOrder(BList.UUID);
                 myFrom.ShowDialog();
@@ -229,7 +231,6 @@ namespace ShoesOrderPrint
         private void t_dgv_Data_DoubleClick(object sender, EventArgs e)
         {
             打开ToolStripMenuItem_Click(sender, e);
-
         }
 
         //删除事件
@@ -262,6 +263,7 @@ namespace ShoesOrderPrint
                 this.Warning(ex.Message);
             }
         }
+
         /// <summary>
         /// 表示列宽发生改变事件
         /// </summary>
@@ -330,15 +332,17 @@ namespace ShoesOrderPrint
         private void SetShowColumns(List<MColumnStyle> list)
         {
             isPageLoad = true;
-
+            //循环表格所有列
             foreach (DataGridViewColumn column in t_dgv_Data.Columns)
             {
+                //循环显示列配置
                 foreach (MColumnStyle mColumnStyle in list)
                 {
                     if (column.HeaderText == mColumnStyle.ColumnCaption)
                     {
                         if (column.Width != mColumnStyle.ColumnWidth)
                             column.Width = mColumnStyle.ColumnWidth;
+                        //显示或者隐藏
                         if (mColumnStyle.ColumnVisible == 0)
                             column.Visible = false;
                         else if (mColumnStyle.ColumnVisible == 1)
@@ -350,10 +354,13 @@ namespace ShoesOrderPrint
 
             isPageLoad = false;
         }
+
+        //导入
         private void t_btn_Import_Click(object sender, EventArgs e)
         {
             this.Info("暂未开放！稍后实现");
         }
+        //导出
         private void t_btn_Export_Click(object sender, EventArgs e)
         {
             this.Info("暂未开放！稍后实现");

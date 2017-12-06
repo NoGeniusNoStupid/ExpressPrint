@@ -38,6 +38,8 @@
             this.t_txt_ExpressNo = new TX.Framework.WindowUI.Controls.TXTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txGroupBox1 = new TX.Framework.WindowUI.Controls.TXGroupBox();
+            this.t_cmg_ExpressType = new TX.Framework.WindowUI.Controls.TXComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.t_btn_Import = new TX.Framework.WindowUI.Controls.TXButton();
             this.t_btn_columns = new TX.Framework.WindowUI.Controls.TXButton();
             this.t_btn_Export = new TX.Framework.WindowUI.Controls.TXButton();
@@ -58,8 +60,6 @@
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column11 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.label2 = new System.Windows.Forms.Label();
-            this.t_cmg_ExpressType = new TX.Framework.WindowUI.Controls.TXComboBox();
             this.txMenuStrip1.SuspendLayout();
             this.txGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.t_dgv_Data)).BeginInit();
@@ -173,6 +173,23 @@
             this.txGroupBox1.Text = "信息查询";
             this.txGroupBox1.TextMargin = 6;
             // 
+            // t_cmg_ExpressType
+            // 
+            this.t_cmg_ExpressType.FormattingEnabled = true;
+            this.t_cmg_ExpressType.Location = new System.Drawing.Point(281, 22);
+            this.t_cmg_ExpressType.Name = "t_cmg_ExpressType";
+            this.t_cmg_ExpressType.Size = new System.Drawing.Size(143, 20);
+            this.t_cmg_ExpressType.TabIndex = 12;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(222, 26);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(53, 12);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "快递类型";
+            // 
             // t_btn_Import
             // 
             this.t_btn_Import.Image = null;
@@ -182,6 +199,7 @@
             this.t_btn_Import.TabIndex = 10;
             this.t_btn_Import.Text = "导出Excel";
             this.t_btn_Import.UseVisualStyleBackColor = true;
+            this.t_btn_Import.Visible = false;
             this.t_btn_Import.Click += new System.EventHandler(this.t_btn_Import_Click);
             // 
             // t_btn_columns
@@ -204,6 +222,7 @@
             this.t_btn_Export.TabIndex = 9;
             this.t_btn_Export.Text = "导出Excel";
             this.t_btn_Export.UseVisualStyleBackColor = true;
+            this.t_btn_Export.Visible = false;
             this.t_btn_Export.Click += new System.EventHandler(this.t_btn_Export_Click);
             // 
             // t_txt_Search
@@ -394,23 +413,6 @@
             this.Column11.ReadOnly = true;
             this.Column11.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Column11.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(222, 26);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 12);
-            this.label2.TabIndex = 11;
-            this.label2.Text = "快递类型";
-            // 
-            // t_cmg_ExpressType
-            // 
-            this.t_cmg_ExpressType.FormattingEnabled = true;
-            this.t_cmg_ExpressType.Location = new System.Drawing.Point(281, 22);
-            this.t_cmg_ExpressType.Name = "t_cmg_ExpressType";
-            this.t_cmg_ExpressType.Size = new System.Drawing.Size(143, 20);
-            this.t_cmg_ExpressType.TabIndex = 12;
             // 
             // ExpressManage
             // 

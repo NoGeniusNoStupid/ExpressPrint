@@ -24,16 +24,25 @@ namespace ShoesOrderPrint
         /// 维护列业务逻辑类
         /// </summary>
         ColumnStyleBLL m_ColumnStyleBLL = new ColumnStyleBLL();
+
+        #region 构造函数
         public FrmColumns()
         {
             InitializeComponent();
         }
         public FrmColumns(List<MColumnStyle> myList)
         {
+            //参数传递
             m_List = myList;
             InitializeComponent();
         }
+        #endregion
 
+        /// <summary>
+        /// 页面加载
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FrmColumns_Load(object sender, EventArgs e)
         {          
             int LocationY = 40;
@@ -46,6 +55,8 @@ namespace ShoesOrderPrint
                 LocationY += 30;
             }
         }
+
+
         /// <summary>
         /// 创建CheckBox
         /// </summary>
@@ -68,6 +79,7 @@ namespace ShoesOrderPrint
         {
             try
             {
+                //循环所有控件
                 foreach (Control control in this.Controls)
                 {
                     TXCheckBox myCheckBox = control as TXCheckBox;

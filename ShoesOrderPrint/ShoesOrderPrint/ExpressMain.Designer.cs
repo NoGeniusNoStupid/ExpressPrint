@@ -31,7 +31,6 @@
             this.txButton4 = new TX.Framework.WindowUI.Controls.TXButton();
             this.txButton2 = new TX.Framework.WindowUI.Controls.TXButton();
             this.txButton1 = new TX.Framework.WindowUI.Controls.TXButton();
-            this.t_btn_DataBackup = new TX.Framework.WindowUI.Controls.TXButton();
             this.label1 = new System.Windows.Forms.Label();
             this.t_btn_ExpressNoConfig = new TX.Framework.WindowUI.Controls.TXButton();
             this.SuspendLayout();
@@ -39,7 +38,7 @@
             // txButton4
             // 
             this.txButton4.Image = null;
-            this.txButton4.Location = new System.Drawing.Point(207, 113);
+            this.txButton4.Location = new System.Drawing.Point(120, 171);
             this.txButton4.Name = "txButton4";
             this.txButton4.Size = new System.Drawing.Size(100, 28);
             this.txButton4.TabIndex = 7;
@@ -50,7 +49,7 @@
             // txButton2
             // 
             this.txButton2.Image = null;
-            this.txButton2.Location = new System.Drawing.Point(46, 113);
+            this.txButton2.Location = new System.Drawing.Point(281, 171);
             this.txButton2.Name = "txButton2";
             this.txButton2.Size = new System.Drawing.Size(100, 28);
             this.txButton2.TabIndex = 6;
@@ -61,24 +60,13 @@
             // txButton1
             // 
             this.txButton1.Image = null;
-            this.txButton1.Location = new System.Drawing.Point(46, 64);
+            this.txButton1.Location = new System.Drawing.Point(281, 117);
             this.txButton1.Name = "txButton1";
             this.txButton1.Size = new System.Drawing.Size(100, 28);
             this.txButton1.TabIndex = 5;
             this.txButton1.Text = "快递单录入";
             this.txButton1.UseVisualStyleBackColor = true;
             this.txButton1.Click += new System.EventHandler(this.txButton1_Click);
-            // 
-            // t_btn_DataBackup
-            // 
-            this.t_btn_DataBackup.Image = null;
-            this.t_btn_DataBackup.Location = new System.Drawing.Point(380, 64);
-            this.t_btn_DataBackup.Name = "t_btn_DataBackup";
-            this.t_btn_DataBackup.Size = new System.Drawing.Size(100, 28);
-            this.t_btn_DataBackup.TabIndex = 8;
-            this.t_btn_DataBackup.Text = "数据备份";
-            this.t_btn_DataBackup.UseVisualStyleBackColor = true;
-            this.t_btn_DataBackup.Click += new System.EventHandler(this.t_btn_DataBackup_Click);
             // 
             // label1
             // 
@@ -93,7 +81,7 @@
             // t_btn_ExpressNoConfig
             // 
             this.t_btn_ExpressNoConfig.Image = null;
-            this.t_btn_ExpressNoConfig.Location = new System.Drawing.Point(207, 64);
+            this.t_btn_ExpressNoConfig.Location = new System.Drawing.Point(120, 117);
             this.t_btn_ExpressNoConfig.Name = "t_btn_ExpressNoConfig";
             this.t_btn_ExpressNoConfig.Size = new System.Drawing.Size(100, 28);
             this.t_btn_ExpressNoConfig.TabIndex = 11;
@@ -108,7 +96,6 @@
             this.ClientSize = new System.Drawing.Size(500, 350);
             this.Controls.Add(this.t_btn_ExpressNoConfig);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.t_btn_DataBackup);
             this.Controls.Add(this.txButton4);
             this.Controls.Add(this.txButton2);
             this.Controls.Add(this.txButton1);
@@ -130,7 +117,6 @@
         private TX.Framework.WindowUI.Controls.TXButton txButton4;
         private TX.Framework.WindowUI.Controls.TXButton txButton2;
         private TX.Framework.WindowUI.Controls.TXButton txButton1;
-        private TX.Framework.WindowUI.Controls.TXButton t_btn_DataBackup;
         private System.Windows.Forms.Label label1;
         private TX.Framework.WindowUI.Controls.TXButton t_btn_ExpressNoConfig;
     }

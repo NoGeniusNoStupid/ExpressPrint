@@ -178,7 +178,7 @@ namespace ShoesOrderPrint
             return myList;
         }
         /// <summary>
-        /// 表示需要打印的数据源集合
+        /// 开始打印
         /// </summary>
         /// <param name="mList"></param>
         public void Print(MExpress mExpress)
@@ -222,6 +222,7 @@ namespace ShoesOrderPrint
                 mPrintDocument.DefaultPageSettings.Margins.Right = leftAway * -1;
             //设置打印内容
             mPrintDocument.PrintPage += mPrintDocument_PrintPage;
+            //开的打印
             mPrintDocument.Print();
 
             //更新打印状态
@@ -245,7 +246,10 @@ namespace ShoesOrderPrint
             }
             return myList;
         }
-        //单个打印
+        /// <summary>
+        /// 单条记录打印
+        /// </summary>
+        /// <param name="mExpress"></param>
         public void OnePrint(MExpress mExpress)
         {
             if (string.IsNullOrEmpty(mExpress.ExpreeType))
@@ -260,7 +264,10 @@ namespace ShoesOrderPrint
             m_MPrinter = myForm.m_Printer;
             Print(mExpress);
         }
-        //批量打印
+        /// <summary>
+        /// 批量打印
+        /// </summary>
+        /// <param name="mExpressList"></param>
         public void MorePrint(List<MExpress> mExpressList)
         {
             string templateName = mExpressList[0].ExpreeType;
@@ -340,15 +347,17 @@ namespace ShoesOrderPrint
         /// <param name="objControlCollection"></param>
         public void InitialControl(Control.ControlCollection controlCollection)
         {
-
+            //循环所有控件
             foreach (Control objControl in controlCollection)
             {                     
                     TXTextBox myTextBox = objControl as TXTextBox;
                     if (myTextBox == null)
                         continue;
+                    
                     MExpressItemConfig myItemConfig = myTextBox.Tag as MExpressItemConfig;
                     if (myItemConfig == null)
                         continue;
+                    //更新位置
                     myItemConfig.LeftAway = myTextBox.Location.X;
                     myItemConfig.TopAway = myTextBox.Location.Y;
                     m_ItemConfigBll.Update(myItemConfig);

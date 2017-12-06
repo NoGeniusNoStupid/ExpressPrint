@@ -132,11 +132,12 @@ namespace ShoesOrderPrint
                 this.Warning(ex.Message);
             }
         }
+        //输入数据出错时，取消操作
         private void t_dgv_PrintItemConfig_DataError(object sender, DataGridViewDataErrorEventArgs e)
         {
             try
             {
-
+                e.Cancel = false;
             }
             catch (Exception ex)
             {

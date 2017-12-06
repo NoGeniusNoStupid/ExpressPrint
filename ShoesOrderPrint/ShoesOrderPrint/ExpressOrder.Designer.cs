@@ -762,7 +762,7 @@
             this.t_cmg_ExpressType.Name = "t_cmg_ExpressType";
             this.t_cmg_ExpressType.Size = new System.Drawing.Size(175, 20);
             this.t_cmg_ExpressType.TabIndex = 2;
-            this.t_cmg_ExpressType.SelectedIndexChanged += new System.EventHandler(this.t_cmg_ExpressType_SelectedIndexChanged);
+           
             // 
             // label13
             // 
